@@ -2,40 +2,37 @@
   "name": "tripletexjs",
   "version": "2.35.9",
   "description": "Typescript / Javascript class for Tripletex 2.0 API",
-  "main": "dist/api.js",
-  "typings": "dist/api.d.ts",
-  "scripts": {
-    "swagger-gen": "./swagger-gen.sh",
-    "prebuild": "npm run swagger-gen",
-    "compile": "tsc --outDir dist/",
-    "build": "npm run compile",
-    "deploy": "node scripts/deploy"
-  },
-  "files": [
-    "dist/**",
-    "custom.d.ts"
-  ],
   "keywords": [
     "tripletex",
     "accounting",
     "invoice",
     "rest-api"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bjerkio/tripletexjs.git"
-  },
-  "author": "Simen A. W. Olsen <so@ayr.no> (http://cobraz.no)",
-  "license": "MIT",
+  "homepage": "https://github.com/Bjerkio/tripletexjs#readme",
   "bugs": {
     "url": "https://github.com/Bjerkio/tripletexjs/issues"
   },
-  "homepage": "https://github.com/Bjerkio/tripletexjs#readme",
+  "repository": "github:bjerkio/tripletexjs",
+  "license": "MIT",
+  "author": "Simen A. W. Olsen <so@ayr.no> (http://cobraz.no)",
+  "main": "dist/api.js",
+  "typings": "dist/api.d.ts",
+  "files": [
+    "dist/**",
+    "custom.d.ts"
+  ],
+  "scripts": {
+    "swagger-gen": "./swagger-gen.sh",
+    "prebuild": "npm run swagger-gen",
+    "build": "npm run compile",
+    "compile": "tsc --outDir dist/",
+    "deploy": "node scripts/deploy"
+  },
   "dependencies": {
-    "bluebird": "^3.5.0",
-    "request": "^2.81.0",
     "@types/bluebird": "*",
-    "@types/request": "*"
+    "@types/request": "*",
+    "bluebird": "^3.5.0",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.1",
