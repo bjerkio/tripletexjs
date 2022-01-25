@@ -1,47 +1,31 @@
 {
   "name": "tripletexjs",
   "version": "2.35.9",
-  "description": "Typescript / Javascript class for Tripletex 2.0 API",
+  "description": "Typescript-wrapper for Tripletex 2.0 API",
   "keywords": [
     "tripletex",
     "accounting",
     "invoice",
     "rest-api"
   ],
-  "homepage": "https://github.com/Bjerkio/tripletexjs#readme",
-  "bugs": {
-    "url": "https://github.com/Bjerkio/tripletexjs/issues"
-  },
   "repository": "github:bjerkio/tripletexjs",
-  "license": "MIT",
-  "author": "Simen A. W. Olsen <so@ayr.no> (http://cobraz.no)",
-  "main": "dist/api.js",
-  "typings": "dist/api.d.ts",
-  "files": [
-    "dist/**",
-    "custom.d.ts"
-  ],
-  "scripts": {
-    "swagger-gen": "./swagger-gen.sh",
-    "prebuild": "npm run swagger-gen",
-    "build": "npm run compile",
-    "compile": "tsc --outDir dist/",
-    "deploy": "node scripts/deploy"
-  },
-  "dependencies": {
-    "@types/bluebird": "*",
-    "@types/request": "*",
-    "bluebird": "^3.5.0",
-    "request": "^2.81.0"
+  "license": "Apache-2.0",
+  "author": "Simen A. W. Olsen <so@bjerk.io> (https://bjerk.io)",
+  "prettier": "@cobraz/prettier",
+  "eslintConfig": {
+    "extends": "@bjerk/eslint-config"
   },
   "devDependencies": {
-    "@types/node": "^12.7.1",
-    "execa": "^4.0.0",
-    "fs-extra": "^8.1.0",
-    "release-it": "^12.3.5",
-    "semver": "^7.1.3",
-    "shelljs": "^0.8.3",
-    "simple-git": "^1.110.0",
-    "typescript": "^3.5.3"
+    "@bjerk/eslint-config": "^1.0.0",
+    "@cobraz/prettier": "^2.0.0",
+    "@tsconfig/recommended": "^1.0.1",
+    "eslint": "^8.7.0",
+    "jest": "^27.4.7",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.0",
+    "runtypes": "^6.5.0",
+    "typical-fetch": "^1.4.1"
   }
 }
