@@ -47,6 +47,10 @@ export function toString(d: unknown): string | undefined {
     return undefined;
   }
 
+  if (d instanceof Date) {
+    return formatDate(d);
+  }
+
   if (Array.isArray(d)) {
     return d.map(value => toString(value)).join(',');
   }
