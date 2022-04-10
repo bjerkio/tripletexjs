@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/bjerkio/tripletexjs/compare/v3.2.1...v3.3.0) (2022-04-10)
+
+
+### Features
+
+* add employee to tripletex-client ([a8a4226](https://github.com/bjerkio/tripletexjs/commit/a8a4226957cc73fb33e209ce52219506e11beede))
+
 ### [3.2.1](https://github.com/bjerkio/tripletexjs/compare/v3.2.0...v3.2.1) (2022-04-10)
 
 
