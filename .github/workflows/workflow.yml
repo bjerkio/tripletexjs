@@ -31,6 +31,9 @@ jobs:
       - run: yarn test
         env:
           CI: true
+          BASE_URL: https://api.tripletex.io/
+          CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
+          EMPLOYEE_TOKEN: ${{ secrets.EMPLOYEE_TOKEN }}
 
       - uses: codecov/codecov-action@v2
 

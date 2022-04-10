@@ -1,12 +1,19 @@
 import { buildCall, CallReturn, TypicalHttpError } from 'typical-fetch';
 import { invariant } from 'ts-invariant';
 import { TripletexClientConfig, TripletexRuntimeConfig } from '../types';
+import { TripletexToken } from './token/token';
+import { addDays } from 'date-fns';
 
 export abstract class TripletexBase {
+  private readonly tokenClient: TripletexToken;
+  private sessionToken?: string;
+
   constructor(
     readonly config: TripletexClientConfig,
     readonly runtimeConfig?: TripletexRuntimeConfig,
-  ) {}
+  ) {
+    this.tokenClient = new TripletexToken(config);
+  }
 
   protected authenticatedCall() {
     invariant(this.runtimeConfig, 'missing runtime config');
@@ -38,10 +45,12 @@ export abstract class TripletexBase {
   }
 
   protected async performRequest<R, E>(
-    call: () => Promise<CallReturn<R, E>>,
+    call: (sessionToken: string) => Promise<CallReturn<R, E>>,
   ): Promise<CallReturn<R, E>> {
+    const sessionToken = await this.getToken();
+
     for (let n = 0; n <= 3; n++) {
-      const res = await call();
+      const res = await call(sessionToken);
 
       if (res.success) {
         return res;
@@ -61,25 +70,26 @@ export abstract class TripletexBase {
     throw new Error('Not able to perform request');
   }
 
-  // private refreshToken():
-  //   | ReturnType<typeof authCalls.getToken>
-  //   | ReturnType<typeof authCalls.refreshTokens>
-  //   | undefined {
-  //   if (this.tokenState === undefined) {
-  //     invariant(this.clientKey);
-  //     return authCalls.getToken({
-  //       applicationKey: this.applicationKey,
-  //       baseUrl: this.baseUrl,
-  //       clientKey: this.clientKey,
-  //     });
-  //   } else if (this.tokenHasExpired()) {
-  //     return authCalls.refreshTokens({
-  //       baseUrl: this.baseUrl,
-  //       refreshToken: this.tokenState.refreshToken,
-  //     });
-  //   } else {
-  //     // we have a token and it's valid!
-  //     return undefined;
-  //   }
-  // }
+  private async getToken() {
+    if (this.sessionToken) {
+      return this.sessionToken;
+    }
+
+    const expirationDate = this.config.expirationDate ?? addDays(new Date(), 2);
+    invariant(this.config.employeeToken, 'expected employeeToken in config');
+    invariant(this.config.consumerToken, 'expected consumerToken in config');
+
+    const tokenRequest = await this.tokenClient.createSessionToken({
+      employeeToken: this.config.employeeToken,
+      consumerToken: this.config.consumerToken,
+      expirationDate,
+    });
+
+    if (!tokenRequest.success) {
+      throw new Error('Not able to retrieve session token');
+    }
+
+    this.sessionToken = tokenRequest.body.value.token;
+    return this.sessionToken;
+  }
 }

@@ -1,6 +1,9 @@
+import { buildCall } from 'typical-fetch';
+import { invariant } from 'ts-invariant';
+import { TripletexClientConfig } from '../../types';
 import { formatDate, withRuntype } from '../../utils';
-import { TripletexBase } from '../base';
 import { getTokenResponseRt } from './models/session-token';
+export * from './models/session-token';
 
 export interface CreateSessionTokenInput {
   employeeToken: string;
@@ -8,9 +11,16 @@ export interface CreateSessionTokenInput {
   expirationDate: Date;
 }
 
-export class TripletexToken extends TripletexBase {
+export class TripletexToken {
+  constructor(readonly config: TripletexClientConfig) {}
+
   createSessionToken(args: CreateSessionTokenInput) {
-    const call = this.unauthenticatedCall() //
+    invariant(this.config.baseUrl, 'missing baseUrl in config');
+    const call = buildCall() //
+      .baseUrl(this.config.baseUrl)
+      .headers(() => ({
+        'User-Agent': this.config.userAgent ?? 'bjerkio-tripletex/3',
+      }))
       .args<{
         input: CreateSessionTokenInput;
       }>()
@@ -23,6 +33,6 @@ export class TripletexToken extends TripletexBase {
       .parseJson(withRuntype(getTokenResponseRt))
       .build();
 
-    return this.performRequest(() => call({ input: args }));
+    return call({ input: args });
   }
 }

@@ -17,7 +17,7 @@ export interface TripletexClientConfig {
 
   organizationId?: string;
 
-  expirationDate?: string;
+  expirationDate?: Date;
 }
 
 export interface TripletexRuntimeConfig {

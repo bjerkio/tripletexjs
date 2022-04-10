@@ -1,4 +1,6 @@
-import { TripletexClientConfig } from "./types";
+import { TripletexToken } from './calls/token/token';
+import { TripletexClientConfig } from './types';
+export * from './calls/token/token';
 
 /**
  * Tripletex Client
@@ -9,7 +11,11 @@ import { TripletexClientConfig } from "./types";
 export class TripletexClient {
   constructor(private readonly config: TripletexClientConfig) {}
 
-  bank(): TripletexBank {
-    const bank = new TripletexBank();
+  token(): TripletexToken {
+    return new TripletexToken(this.config);
   }
+
+  // bank(): TripletexBank {
+  //   const bank = new TripletexBank();
+  // }
 }
