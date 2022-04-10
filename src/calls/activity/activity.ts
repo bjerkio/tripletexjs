@@ -56,6 +56,6 @@ export class TripletexActivity extends TripletexBase {
       .parseJson(withRuntype(listActivityResponseRt))
       .build();
 
-    return call({ input });
+    return this.performRequest(sessionToken => call({ input, sessionToken }));
   }
 }

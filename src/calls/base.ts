@@ -6,31 +6,32 @@ import { addDays } from 'date-fns';
 
 export abstract class TripletexBase {
   private readonly tokenClient: TripletexToken;
-  private sessionToken?: string;
 
   constructor(
     readonly config: TripletexClientConfig,
-    readonly runtimeConfig?: TripletexRuntimeConfig,
+    private sessionToken?: string,
   ) {
     this.tokenClient = new TripletexToken(config);
   }
 
   protected authenticatedCall() {
-    invariant(this.runtimeConfig, 'missing runtime config');
     invariant(this.config.baseUrl, 'missing baseUrl in config');
-    const basicAuth = Buffer.from(
-      [
-        this.runtimeConfig?.organizationId ?? '0', //
-        this.runtimeConfig.sessionToken,
-      ].join(':'),
-    ).toString('base64');
-
     return buildCall() //
+      .args<{ sessionToken: string }>()
       .baseUrl(this.config.baseUrl)
-      .headers(() => ({
-        'User-Agent': this.config.userAgent ?? 'bjerkio-tripletex/3',
-        Authorization: `Basic ${basicAuth}`,
-      }));
+      .headers(({ sessionToken }) => {
+        const basicAuth = Buffer.from(
+          [
+            this.config.organizationId ?? '0', //
+            sessionToken,
+          ].join(':'),
+        ).toString('base64');
+
+        return {
+          'User-Agent': this.config.userAgent ?? 'bjerkio-tripletex/3',
+          Authorization: `Basic ${basicAuth}`,
+        };
+      });
     // .mapError(errorParser);
   }
 

@@ -10,7 +10,7 @@ describe('activity class', () => {
   let client: TripletexActivity;
 
   beforeEach(() => {
-    client = new TripletexActivity({ baseUrl }, { sessionToken });
+    client = new TripletexActivity({ baseUrl }, sessionToken);
   });
 
   it('should create session token', async () => {
