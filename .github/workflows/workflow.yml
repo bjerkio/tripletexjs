@@ -41,11 +41,3 @@ jobs:
         run: yarn publish --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - run: yarn build-storybook
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.BJERKBOT_GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
