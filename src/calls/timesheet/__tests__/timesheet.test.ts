@@ -306,4 +306,71 @@ describe('activity class', () => {
     invariant(result.success);
     expect(result).toMatchSnapshot();
   });
+
+  it('should get status on timesheet month', async () => {
+    nock(baseUrl, { encodedQueryParams: true })
+      .get('/v2/timesheet/month/byMonthNumber')
+      .query({ employeeIds: '1734852', monthYear: '2022-03' })
+      .reply(200, {
+        fullResultSize: 0,
+        from: 0,
+        count: 0,
+        versionDigest: null,
+        values: [
+          {
+            id: 83,
+            version: 0,
+            url: 'api.tripletex.io/v2/timesheet/month/83',
+            employee: {
+              id: 1734852,
+              url: 'api.tripletex.io/v2/employee/1734852',
+            },
+            timesheetEntries: [
+              {
+                id: 1211635,
+                url: 'api.tripletex.io/v2/timesheet/entry/1211635',
+              },
+            ],
+            approvedDate: null,
+            completed: false,
+            approvedBy: null,
+            approved: false,
+            approvedUntilDate: null,
+            monthYear: '2022-03',
+            hoursPayout: 0,
+            vacationPayout: 0,
+            hourSummary: {
+              sumHours: 31.41,
+              hoursWithPay: 31.41,
+              hourlyWageHoursWithPay: 0,
+              standardTime: 172.5,
+              nonChargeableHours: 31.41,
+              chargeableHours: 0,
+              nonChargeableHoursWithPay: 31.41,
+              budgetChargeableHours: 0,
+            },
+            flexSummary: {
+              incomingHourBalance: -226.64,
+              outgoingHourBalance: -367.73,
+              change: -141.09,
+            },
+            vacationSummary: {
+              incomingVacationBalance: 24.466666666666665,
+              outgoingVacationBalance: 24.466666666666665,
+              vacationTakenInPeriod: 0,
+              vacationTakenThisYear: 0.5333333333333333,
+            },
+          },
+        ],
+      });
+      
+    const entries = await client.getMonthByMonthNumber({
+      employeeIds: ['1734852'],
+      monthYear: new Date('2022-03-01'),
+    });
+
+    parseRuntypeValidationError(entries.error);
+    invariant(entries.success);
+    expect(entries.body.values).toMatchSnapshot();
+  });
 });

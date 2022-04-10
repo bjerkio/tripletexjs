@@ -57,3 +57,12 @@ export interface TimesheetEntryInput {
 export interface UpdateTimesheetEntryInput extends TimesheetEntryInput {
   id: number;
 }
+
+export interface GetMonthByMonthNumberInput extends DefaultTripletexInputs {
+  /**
+   * List of IDs
+   */
+  employeeIds: string[];
+
+  monthYear: Date;
+}

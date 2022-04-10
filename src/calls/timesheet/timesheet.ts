@@ -1,8 +1,19 @@
 import omitEmpty from 'omit-empty';
-import { formatDate, serializeQuery, withRuntype } from '../../utils';
+import {
+  formatDate,
+  formatMonthYear,
+  serializeQuery,
+  withRuntype,
+} from '../../utils';
 import { TripletexBase } from '../base';
 import { listTimesheetResponseRt } from './models/timesheet';
-import { ListTimesheetEntriesInput, TimesheetEntryInput, UpdateTimesheetEntryInput } from './types';
+import { getTimesheetMonthResponseRt } from './models/timesheet-month';
+import {
+  GetMonthByMonthNumberInput,
+  ListTimesheetEntriesInput,
+  TimesheetEntryInput,
+  UpdateTimesheetEntryInput,
+} from './types';
 export * from './models/timesheet';
 
 export class TripletexTimesheet extends TripletexBase {
@@ -85,5 +96,22 @@ export class TripletexTimesheet extends TripletexBase {
       .build();
 
     return this.performRequest(sessionToken => call({ sessionToken }));
+  }
+
+  getMonthByMonthNumber(input: GetMonthByMonthNumberInput) {
+    const call = this.authenticatedCall() //
+      .args<{
+        input: GetMonthByMonthNumberInput;
+      }>()
+      .path('/v2/timesheet/month/byMonthNumber')
+      .query(({ input: { monthYear, ...q } }) => ({
+        ...serializeQuery(q),
+        monthYear: formatMonthYear(monthYear),
+      }))
+      .method('get')
+      .parseJson(withRuntype(getTimesheetMonthResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ input, sessionToken }));
   }
 }

@@ -40,6 +40,55 @@ Object {
 }
 `;
 
+exports[`activity class should get status on timesheet month 1`] = `
+Array [
+  Object {
+    "approved": false,
+    "approvedBy": null,
+    "approvedDate": null,
+    "approvedUntilDate": null,
+    "completed": false,
+    "employee": Object {
+      "id": 1734852,
+      "url": "api.tripletex.io/v2/employee/1734852",
+    },
+    "flexSummary": Object {
+      "change": -141.09,
+      "incomingHourBalance": -226.64,
+      "outgoingHourBalance": -367.73,
+    },
+    "hourSummary": Object {
+      "budgetChargeableHours": 0,
+      "chargeableHours": 0,
+      "hourlyWageHoursWithPay": 0,
+      "hoursWithPay": 31.41,
+      "nonChargeableHours": 31.41,
+      "nonChargeableHoursWithPay": 31.41,
+      "standardTime": 172.5,
+      "sumHours": 31.41,
+    },
+    "hoursPayout": 0,
+    "id": 83,
+    "monthYear": "2022-03",
+    "timesheetEntries": Array [
+      Object {
+        "id": 1211635,
+        "url": "api.tripletex.io/v2/timesheet/entry/1211635",
+      },
+    ],
+    "url": "api.tripletex.io/v2/timesheet/month/83",
+    "vacationPayout": 0,
+    "vacationSummary": Object {
+      "incomingVacationBalance": 24.466666666666665,
+      "outgoingVacationBalance": 24.466666666666665,
+      "vacationTakenInPeriod": 0,
+      "vacationTakenThisYear": 0.5333333333333333,
+    },
+    "version": 0,
+  },
+]
+`;
+
 exports[`activity class should list timesheet entries 1`] = `
 Array [
   Object {

@@ -42,6 +42,10 @@ export function formatDate(d: Date | number): string {
   return format(d, 'yyyy-MM-dd');
 }
 
+export function formatMonthYear(d: Date | number): string {
+  return format(d, 'yyyy-MM');
+}
+
 export function toString(d: unknown): string | undefined {
   if (!d) {
     return undefined;
