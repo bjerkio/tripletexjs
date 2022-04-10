@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.2.1](https://github.com/bjerkio/tripletexjs/compare/v3.2.0...v3.2.1) (2022-04-10)
+
+
+### Bug Fixes
+
+* Add dist files ([695280d](https://github.com/bjerkio/tripletexjs/commit/695280d5928928edc2513c0854fdda9deb21989a))
+
 ## [3.2.0](https://github.com/bjerkio/tripletexjs/compare/v2.35.9...v3.2.0) (2022-04-10)
 
 
