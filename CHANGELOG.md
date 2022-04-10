@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/bjerkio/tripletexjs/compare/v3.3.0...v3.4.0) (2022-04-10)
+
+
+### Features
+
+* list project method ([0d567af](https://github.com/bjerkio/tripletexjs/commit/0d567af4eccd45fa05b36a645f16819a43ac1b22))
+
 ## [3.3.0](https://github.com/bjerkio/tripletexjs/compare/v3.2.1...v3.3.0) (2022-04-10)
 
 
