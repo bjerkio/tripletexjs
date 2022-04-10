@@ -24,3 +24,17 @@ export interface TripletexRuntimeConfig {
   sessionToken: string;
   organizationId?: string;
 }
+
+export interface DefaultTripletexInputs {
+  /**
+   * From index
+   */
+  from?: number;
+
+  /**
+   * Number of elements to return
+   * @default 1000
+   */
+  count?: number;
+  sorting?: string;
+}
