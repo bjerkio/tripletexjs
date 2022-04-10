@@ -24,6 +24,7 @@
     "@cobraz/prettier": "^2.0.0",
     "@tsconfig/node16": "^1.0.2",
     "@types/jest": "^27.4.1",
+    "@types/omit-empty": "^1.0.1",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "nock": "^13.2.4",
@@ -35,6 +36,7 @@
     "dotenv": "^16.0.0",
     "invariant": "^2.2.4",
     "node-fetch": "^3.2.0",
+    "omit-empty": "^1.0.0",
     "runtypes": "^6.5.0",
     "typical-fetch": "^1.4.1"
   }

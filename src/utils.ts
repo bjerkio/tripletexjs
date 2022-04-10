@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import * as rt from 'runtypes';
+import { TypicalWrappedError } from 'typical-fetch';
 
 export function pickFromObject<
   T extends Record<string, unknown>,
@@ -39,4 +40,44 @@ export function singleValueEnvelope<T>(type: rt.Runtype<T>) {
 
 export function formatDate(d: Date | number): string {
   return format(d, 'yyyy-MM-dd');
+}
+
+export function toString(d: unknown): string | undefined {
+  if (!d) {
+    return undefined;
+  }
+
+  return String(d);
+}
+
+export function serializeQuery<T extends Object>(
+  query: T,
+): Record<string, string> {
+  return Object.entries(query).reduce<Record<string, string>>(
+    (q, [key, value]) => {
+      const stringifiedValue = toString(value);
+
+      if (key && stringifiedValue) {
+        console.log(key);
+        q[key] = stringifiedValue;
+      }
+
+      return q;
+    },
+    {},
+  );
+}
+
+export function parseRuntypeValidationError(error: unknown) {
+  if (error instanceof TypicalWrappedError) {
+    if (error.wrappedError instanceof rt.ValidationError) {
+      throw new Error(
+        JSON.stringify({
+          details: error.wrappedError.details,
+          name: error.wrappedError.name,
+          code: error.wrappedError.code,
+        }),
+      );
+    }
+  }
 }
