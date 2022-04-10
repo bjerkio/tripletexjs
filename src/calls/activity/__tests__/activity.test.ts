@@ -13,7 +13,7 @@ describe('activity class', () => {
     client = new TripletexActivity({ baseUrl }, sessionToken);
   });
 
-  it('should create session token', async () => {
+  it('should list activities', async () => {
     nock(baseUrl, { encodedQueryParams: true })
       .get('/v2/activity')
       .reply(200, {
