@@ -2,6 +2,7 @@
   "name": "tripletexjs",
   "version": "3.2.1",
   "description": "Typescript-wrapper for Tripletex 2.0 API",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
