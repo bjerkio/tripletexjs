@@ -4,6 +4,7 @@ import { CallReturn, TypicalHttpError, buildCall } from 'typical-fetch';
 import { TripletexClientConfig } from '../types';
 import { TripletexToken } from './token/token';
 
+const defaultBaseUrl = 'https://tripletex.no/';
 export abstract class TripletexBase {
   private readonly tokenClient: TripletexToken;
 
@@ -15,10 +16,9 @@ export abstract class TripletexBase {
   }
 
   protected authenticatedCall() {
-    invariant(this.config.baseUrl, 'missing baseUrl in config');
     return buildCall() //
       .args<{ sessionToken: string }>()
-      .baseUrl(this.config.baseUrl ?? 'https://tripletex.no/')
+      .baseUrl(this.config.baseUrl ?? defaultBaseUrl)
       .headers(({ sessionToken }) => {
         const basicAuth = Buffer.from(
           [
@@ -36,9 +36,8 @@ export abstract class TripletexBase {
   }
 
   protected unauthenticatedCall() {
-    invariant(this.config.baseUrl, 'missing baseUrl in config');
     return buildCall() //
-      .baseUrl(this.config.baseUrl)
+      .baseUrl(this.config.baseUrl ?? defaultBaseUrl)
       .headers(() => ({
         'User-Agent': this.config.userAgent ?? 'bjerkio-tripletex/3',
       }));
