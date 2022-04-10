@@ -18,7 +18,7 @@ export abstract class TripletexBase {
     invariant(this.config.baseUrl, 'missing baseUrl in config');
     return buildCall() //
       .args<{ sessionToken: string }>()
-      .baseUrl(this.config.baseUrl)
+      .baseUrl(this.config.baseUrl ?? 'https://tripletex.no/')
       .headers(({ sessionToken }) => {
         const basicAuth = Buffer.from(
           [

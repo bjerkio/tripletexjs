@@ -104,3 +104,10 @@ export function isDate(input: any): input is Date {
 
   return true;
 }
+
+export const resourceRef = rt
+  .Record({
+    id: rt.Number,
+  })
+  .nullable()
+  .optional();

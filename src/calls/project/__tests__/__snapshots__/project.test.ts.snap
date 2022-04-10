@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity class should list activities 1`] = `
+Array [
+  Object {
+    "accessType": "WRITE",
+    "attention": null,
+    "contact": null,
+    "contributionMarginPercent": 0,
+    "currency": Object {
+      "id": 1,
+      "url": "api.tripletex.io/v2/currency/1",
+    },
+    "customer": null,
+    "deliveryAddress": null,
+    "department": Object {
+      "id": 88885,
+      "url": "api.tripletex.io/v2/department/88885",
+    },
+    "description": "",
+    "discountPercentage": 0,
+    "displayName": "1 Test",
+    "displayNameFormat": "NAME_STANDARD",
+    "endDate": null,
+    "externalAccountsNumber": "",
+    "fixedprice": 0,
+    "forParticipantsOnly": false,
+    "generalProjectActivitiesPerProjectOnly": false,
+    "hierarchyNameAndNumber": "1 Test",
+    "id": 1560889,
+    "ignoreCompanyProductDiscountAgreement": false,
+    "invoiceComment": "",
+    "invoiceDueDate": 0,
+    "invoiceReceiverEmail": "",
+    "invoicingPlan": Array [],
+    "isClosed": false,
+    "isFixedPrice": false,
+    "isInternal": false,
+    "isOffer": false,
+    "isPriceCeiling": false,
+    "isReadyForInvoicing": false,
+    "mainProject": null,
+    "markUpFeesEarned": 0,
+    "markUpOrderLines": 0,
+    "name": "Test",
+    "number": "1",
+    "numberOfProjectParticipants": 1,
+    "numberOfSubProjects": 0,
+    "orderLines": Array [],
+    "participants": Array [
+      Object {
+        "id": 16800,
+        "url": "api.tripletex.io/v2/project/participant/16800",
+      },
+    ],
+    "preliminaryInvoice": null,
+    "priceCeilingAmount": 0,
+    "projectActivities": Array [],
+    "projectCategory": null,
+    "projectHourlyRates": Array [
+      Object {
+        "id": 50292,
+        "url": "api.tripletex.io/v2/project/hourlyRates/50292",
+      },
+    ],
+    "projectManager": Object {
+      "id": 1734852,
+      "url": "api.tripletex.io/v2/employee/1734852",
+    },
+    "reference": "",
+    "startDate": "2022-04-04",
+    "url": "api.tripletex.io/v2/project/1560889",
+    "useProductNetPrice": false,
+    "vatType": Object {
+      "id": 3,
+      "url": "api.tripletex.io/v2/ledger/vatType/3",
+    },
+    "version": 0,
+  },
+]
+`;
