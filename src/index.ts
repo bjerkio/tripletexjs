@@ -1,4 +1,5 @@
 import { TripletexActivity } from './calls/activity/activity';
+import { TripletexTimesheet } from './calls/timesheet/timesheet';
 import { TripletexToken } from './calls/token/token';
 import { TripletexClientConfig } from './types';
 export * from './calls/token/token';
@@ -14,6 +15,10 @@ export class TripletexClient {
 
   activity(): TripletexActivity {
     return new TripletexActivity(this.config);
+  }
+
+  timesheet(): TripletexTimesheet {
+    return new TripletexTimesheet(this.config);
   }
 
   token(): TripletexToken {

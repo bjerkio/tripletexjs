@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import * as rt from 'runtypes';
 import { TypicalWrappedError } from 'typical-fetch';
 
@@ -66,7 +66,6 @@ export function serializeQuery<T extends Object>(
       const stringifiedValue = toString(value);
 
       if (key && stringifiedValue) {
-        console.log(key);
         q[key] = stringifiedValue;
       }
 
@@ -88,4 +87,14 @@ export function parseRuntypeValidationError(error: unknown) {
       );
     }
   }
+}
+
+export function isDate(input: any): input is Date {
+  const date = new Date(input);
+
+  if (!isValid(date)) {
+    return false;
+  }
+
+  return true;
 }
