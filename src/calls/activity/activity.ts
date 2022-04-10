@@ -8,7 +8,7 @@ export interface ListActivityInput {
   /**
    * List of IDs
    */
-  id?: string;
+  id?: string[];
 
   /**
    * Containing

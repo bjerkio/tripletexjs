@@ -47,6 +47,10 @@ export function toString(d: unknown): string | undefined {
     return undefined;
   }
 
+  if (Array.isArray(d)) {
+    return d.map(value => toString(value)).join(',');
+  }
+
   return String(d);
 }
 
