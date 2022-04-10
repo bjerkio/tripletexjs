@@ -14,7 +14,7 @@ export function pickFromObject<
 }
 
 export function withRuntype<T>(validator: rt.Runtype<T>): (data: unknown) => T {
-  return (data) => {
+  return data => {
     return validator.check(data);
   };
 }
@@ -78,6 +78,11 @@ export function serializeQuery<T extends Object>(
 
 export function parseRuntypeValidationError(error: unknown) {
   if (error instanceof TypicalWrappedError) {
+    console.log({
+      wrapperError: error.wrappedError,
+      message: error.message,
+      bodyText: error.bodyText,
+    });
     if (error.wrappedError instanceof rt.ValidationError) {
       throw new Error(
         JSON.stringify({

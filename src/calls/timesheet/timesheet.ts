@@ -1,56 +1,9 @@
-import { serializeQuery, withRuntype } from '../../utils';
+import omitEmpty from 'omit-empty';
+import { formatDate, serializeQuery, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import { listTimesheetResponseRt } from './models/timesheet';
+import { ListTimesheetEntriesInput, TimesheetEntryInput, UpdateTimesheetEntryInput } from './types';
 export * from './models/timesheet';
-
-export interface ListTimesheetEntriesInput {
-  /**
-   * List of IDs
-   */
-  id?: string[];
-
-  /**
-   * List of IDs
-   */
-  employeeId?: string[];
-
-  /**
-   * List of IDs
-   */
-  projectId?: string[];
-
-  /**
-   * List of IDs
-   */
-  activityId?: string[];
-
-  /**
-   * From and including
-   */
-  dateFrom: Date;
-
-  /**
-   * To and including
-   */
-  dateTo: Date;
-
-  /**
-   * Containing
-   */
-  comment?: string;
-
-  /**
-   * From index
-   */
-  from?: number;
-
-  /**
-   * Number of elements to return
-   * @default 1000
-   */
-  count?: number;
-  sorting?: string;
-}
 
 export class TripletexTimesheet extends TripletexBase {
   listEntries(input: ListTimesheetEntriesInput) {
@@ -65,5 +18,72 @@ export class TripletexTimesheet extends TripletexBase {
       .build();
 
     return this.performRequest(sessionToken => call({ input, sessionToken }));
+  }
+
+  updateEntries(entries: UpdateTimesheetEntryInput[]) {
+    const call = this.authenticatedCall() //
+      .path('/v2/timesheet/entry/list')
+      .body(() => {
+        return entries.map(input => {
+          const entry: Record<string, any> = {
+            id: input.id,
+            employee: {
+              id: input.employeeId,
+            },
+            activity: {
+              id: input.activityId,
+            },
+            date: formatDate(input.date),
+            hours: input.hours,
+            comment: input.comment,
+          };
+
+          if (input.projectId) {
+            entry.project = {
+              id: input.projectId,
+            };
+          }
+
+          return omitEmpty(entry) as Record<string, any>;
+        });
+      })
+      .method('put')
+      .parseJson(withRuntype(listTimesheetResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ sessionToken }));
+  }
+
+  addEntries(entries: TimesheetEntryInput[]) {
+    const call = this.authenticatedCall() //
+      .path('/v2/timesheet/entry/list')
+      .body(() => {
+        return entries.map(input => {
+          const entry: Record<string, any> = {
+            employee: {
+              id: input.employeeId,
+            },
+            activity: {
+              id: input.activityId,
+            },
+            date: formatDate(input.date),
+            hours: input.hours,
+            comment: input.comment,
+          };
+
+          if (input.projectId) {
+            entry.project = {
+              id: input.projectId,
+            };
+          }
+
+          return omitEmpty(entry) as Record<string, any>;
+        });
+      })
+      .method('post')
+      .parseJson(withRuntype(listTimesheetResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ sessionToken }));
   }
 }
