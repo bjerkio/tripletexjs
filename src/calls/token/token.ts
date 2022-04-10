@@ -1,5 +1,5 @@
-import { buildCall } from 'typical-fetch';
 import { invariant } from 'ts-invariant';
+import { buildCall } from 'typical-fetch';
 import { TripletexClientConfig } from '../../types';
 import { formatDate, withRuntype } from '../../utils';
 import { getTokenResponseRt } from './models/session-token';

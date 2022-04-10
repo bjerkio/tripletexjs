@@ -1,6 +1,6 @@
 import { serializeQuery, withRuntype } from '../../utils';
-import { listTimesheetResponseRt } from './models/timesheet';
 import { TripletexBase } from '../base';
+import { listTimesheetResponseRt } from './models/timesheet';
 export * from './models/timesheet';
 
 export interface ListTimesheetEntriesInput {

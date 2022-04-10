@@ -20,11 +20,6 @@ export interface TripletexClientConfig {
   expirationDate?: Date;
 }
 
-export interface TripletexRuntimeConfig {
-  sessionToken: string;
-  organizationId?: string;
-}
-
 export interface DefaultTripletexInputs {
   /**
    * From index

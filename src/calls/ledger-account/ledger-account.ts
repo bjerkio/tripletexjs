@@ -1,5 +1,5 @@
-import { withRuntype } from '../../utils';
 import * as rt from 'runtypes';
+import { withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import { ledgerAccountListRequest, listResponseAccountRt } from './models/list';
 

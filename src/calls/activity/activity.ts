@@ -1,10 +1,10 @@
-import { invariant } from 'ts-invariant';
-import { serializeQuery, toString, withRuntype } from '../../utils';
-import { listActivityResponseRt } from './models/activity';
+import { DefaultTripletexInputs } from '../../types';
+import { serializeQuery, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
+import { listActivityResponseRt } from './models/activity';
 export * from './models/activity';
 
-export interface ListActivityInput {
+export interface ListActivityInput extends DefaultTripletexInputs {
   /**
    * List of IDs
    */
@@ -30,18 +30,6 @@ export interface ListActivityInput {
   isChargeable?: boolean;
   isTask?: boolean;
   isInactive?: boolean;
-
-  /**
-   * From index
-   */
-  from?: number;
-
-  /**
-   * Number of elements to return
-   * @default 1000
-   */
-  count?: number;
-  sorting?: string;
 }
 
 export class TripletexActivity extends TripletexBase {

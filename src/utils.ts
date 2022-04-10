@@ -13,8 +13,8 @@ export function pickFromObject<
   return Object.fromEntries(pairs);
 }
 
-export function withRuntype<T>(validator: rt.Runtype<T>) {
-  return (data: unknown) => {
+export function withRuntype<T>(validator: rt.Runtype<T>): (data: unknown) => T {
+  return (data) => {
     return validator.check(data);
   };
 }
@@ -58,6 +58,7 @@ export function toString(d: unknown): string | undefined {
   return String(d);
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function serializeQuery<T extends Object>(
   query: T,
 ): Record<string, string> {

@@ -1,7 +1,7 @@
-import { serializeQuery, withRuntype } from '../../utils';
-import { listEmployeesResponseRt } from './models/employee';
-import { TripletexBase } from '../base';
 import { DefaultTripletexInputs } from '../../types';
+import { serializeQuery, withRuntype } from '../../utils';
+import { TripletexBase } from '../base';
+import { listEmployeesResponseRt } from './models/employee';
 export * from './models/employee';
 
 export interface ListEmployeesInput extends DefaultTripletexInputs {
@@ -25,17 +25,17 @@ export interface ListEmployeesInput extends DefaultTripletexInputs {
    */
   employeeNumber?: string;
 
-  allowInformationRegistration?: Boolean;
-  includeContacts?: Boolean;
+  allowInformationRegistration?: boolean;
+  includeContacts?: boolean;
 
   /**
    * List of IDs
    */
   deploymentId?: string[];
 
-  onlyProjectManagers?: Boolean;
-  onlyContacts?: Boolean;
-  assignableProjectManagers?: Boolean;
+  onlyProjectManagers?: boolean;
+  onlyContacts?: boolean;
+  assignableProjectManagers?: boolean;
 
   /**
    * Equals
@@ -47,7 +47,7 @@ export interface ListEmployeesInput extends DefaultTripletexInputs {
    */
   periodEnd?: Date;
 
-  hasSystemAccess?: Boolean;
+  hasSystemAccess?: boolean;
 }
 
 export class TripletexEmployee extends TripletexBase {

@@ -1,8 +1,8 @@
-import { buildCall, CallReturn, TypicalHttpError } from 'typical-fetch';
-import { invariant } from 'ts-invariant';
-import { TripletexClientConfig, TripletexRuntimeConfig } from '../types';
-import { TripletexToken } from './token/token';
 import { addDays } from 'date-fns';
+import { invariant } from 'ts-invariant';
+import { CallReturn, TypicalHttpError, buildCall } from 'typical-fetch';
+import { TripletexClientConfig } from '../types';
+import { TripletexToken } from './token/token';
 
 export abstract class TripletexBase {
   private readonly tokenClient: TripletexToken;
