@@ -19,3 +19,8 @@ export interface TripletexClientConfig {
 
   expirationDate?: string;
 }
+
+export interface TripletexRuntimeConfig {
+  sessionToken: string;
+  organizationId?: string;
+}

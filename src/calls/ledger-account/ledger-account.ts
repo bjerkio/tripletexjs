@@ -9,28 +9,9 @@ export class TripletexLedgerAccount extends TripletexBase {
       .args<rt.Static<typeof ledgerAccountListRequest>>()
       .path('/ledger/account')
       .method('get')
-      // .query(
-      //   args =>
-      //     new URLSearchParams(
-      //       pickQueryValues(
-      //         args,
-      //         'id',
-      //         'number',
-      //         'isBankAccount',
-      //         'isInactive',
-      //         'isApplicableForSupplierInvoice',
-      //         'ledgerType',
-      //         'isBalanceAccount',
-      //         'from',
-      //         'count',
-      //         'sorting',
-      //         'fields',
-      //       ),
-      //     ),
-      // )
       .parseJson(withRuntype(listResponseAccountRt))
       .build();
 
-    return this.fetchWithRetry(call);
+    return this.performRequest(call);
   }
 }

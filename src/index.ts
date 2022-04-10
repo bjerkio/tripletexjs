@@ -1,3 +1,4 @@
+import { TripletexClientConfig } from "./types";
 
 /**
  * Tripletex Client

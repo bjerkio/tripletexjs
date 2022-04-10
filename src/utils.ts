@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import * as rt from 'runtypes';
 
 export function pickFromObject<
@@ -34,4 +35,8 @@ export function singleValueEnvelope<T>(type: rt.Runtype<T>) {
       value: type,
     })
     .asReadonly();
+}
+
+export function formatDate(d: Date | number): string {
+  return format(d, 'yyyy-MM-dd');
 }

@@ -3,7 +3,8 @@
   "version": "3.1.0-next.4",
   "description": "Typescript-wrapper for Tripletex 2.0 API",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest --coverage src/**/*"
   },
   "keywords": [
     "tripletex",
@@ -22,11 +23,17 @@
     "@bjerk/eslint-config": "^1.0.0",
     "@cobraz/prettier": "^2.0.0",
     "@tsconfig/node16": "^1.0.2",
+    "@types/jest": "^27.4.1",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
+    "nock": "^13.2.4",
+    "ts-jest": "^27.1.4",
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "date-fns": "^2.28.0",
+    "dotenv": "^16.0.0",
+    "invariant": "^2.2.4",
     "node-fetch": "^3.2.0",
     "runtypes": "^6.5.0",
     "typical-fetch": "^1.4.1"
