@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.5.0](https://github.com/bjerkio/tripletexjs/compare/v3.4.0...v3.5.0) (2022-04-10)
+
+
+### Features
+
+* Add get timesheet month method ([4e3e814](https://github.com/bjerkio/tripletexjs/commit/4e3e8148c7e3fe64b3a42205bb9457bc33e7db39))
+
+
+### Bug Fixes
+
+* add defaultBaseUrl ([ffd05d6](https://github.com/bjerkio/tripletexjs/commit/ffd05d6b33deacc9f451bd5e1f5acf27b3ec57b1))
+
 ## [3.4.0](https://github.com/bjerkio/tripletexjs/compare/v3.3.0...v3.4.0) (2022-04-10)
 
 
