@@ -1,11 +1,8 @@
 import { addDays } from 'date-fns';
-import * as dotenv from 'dotenv';
 import nock from 'nock';
 import { invariant } from 'ts-invariant';
 import { formatDate } from '../../../utils';
 import { TripletexToken } from '../token';
-
-dotenv.config();
 
 const baseUrl = process.env.BASE_URL || 'https://api.tripletex.io/';
 

@@ -4,7 +4,7 @@
   "description": "Typescript-wrapper for Tripletex 2.0 API",
   "scripts": {
     "build": "tsc",
-    "test": "jest --coverage src/**/*"
+    "test": "jest --setupFiles dotenv/config --coverage src/**/*"
   },
   "keywords": [
     "tripletex",
