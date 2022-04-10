@@ -2,6 +2,9 @@
   "name": "tripletexjs",
   "version": "3.2.0",
   "description": "Typescript-wrapper for Tripletex 2.0 API",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .ts,.tsx",
