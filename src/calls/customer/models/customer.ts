@@ -14,12 +14,12 @@ import { multipleValuesEnvelope, resourceRef } from '../../../utils';
 // });
 
 const customerCategoryRt = rt.Record({
-  id: rt.Number,
-  version: rt.Number,
-  name: rt.String,
-  number: rt.String,
-  description: rt.String,
-  type: rt.Number,
+  id: rt.Number.nullable().optional(),
+  version: rt.Number.nullable().optional(),
+  name: rt.String.nullable().optional(),
+  number: rt.String.nullable().optional(),
+  description: rt.String.nullable().optional(),
+  type: rt.Number.nullable().optional(),
 });
 
 const companyBankAccountPresentationRt = rt.Record({
@@ -75,7 +75,10 @@ const customerRt = rt.Record({
     rt.Literal('RECURRING_DAY_OF_MONTH'),
   ),
   currency: resourceRef.nullable().optional(),
-  bankAccountPresentation: rt.Array(companyBankAccountPresentationRt),
+  bankAccountPresentation: rt
+    .Array(companyBankAccountPresentationRt)
+    .nullable()
+    .optional(),
   isCustomer: rt.Boolean,
   isInactive: rt.Boolean,
 });
