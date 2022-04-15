@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.0](https://github.com/bjerkio/tripletexjs/compare/v3.5.0...v3.6.0) (2022-04-15)
+
+
+### Features
+
+* add list customers method ([1da6a77](https://github.com/bjerkio/tripletexjs/commit/1da6a775f2b0fabcbe8acd27e76d21b09debd9b4))
+
 ## [3.5.0](https://github.com/bjerkio/tripletexjs/compare/v3.4.0...v3.5.0) (2022-04-10)
 
 
