@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.6.1](https://github.com/bjerkio/tripletexjs/compare/v3.6.0...v3.6.1) (2022-04-15)
+
+
+### Bug Fixes
+
+* add TripletexCustomer to client ([ac286e1](https://github.com/bjerkio/tripletexjs/commit/ac286e10a39f04e2b659aef51ca1ab652147fda7))
+
 ## [3.6.0](https://github.com/bjerkio/tripletexjs/compare/v3.5.0...v3.6.0) (2022-04-15)
 
 
