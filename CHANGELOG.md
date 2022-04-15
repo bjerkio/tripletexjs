@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.6.2](https://github.com/bjerkio/tripletexjs/compare/v3.6.1...v3.6.2) (2022-04-15)
+
+
+### Bug Fixes
+
+* validation issue ([7724ca3](https://github.com/bjerkio/tripletexjs/commit/7724ca3269d46436bf0b8681eeb41868bbf029f7))
+
 ### [3.6.1](https://github.com/bjerkio/tripletexjs/compare/v3.6.0...v3.6.1) (2022-04-15)
 
 
