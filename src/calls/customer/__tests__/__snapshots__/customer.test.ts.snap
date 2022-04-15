@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity class should list activities 1`] = `
+Array [
+  Object {
+    "accountManager": Object {
+      "id": 1734852,
+      "url": "api.tripletex.io/v2/employee/1734852",
+    },
+    "bankAccountPresentation": Array [],
+    "bankAccounts": Array [],
+    "category1": null,
+    "category2": null,
+    "category3": null,
+    "currency": Object {
+      "id": 1,
+      "url": "api.tripletex.io/v2/currency/1",
+    },
+    "customerNumber": 10001,
+    "deliveryAddress": null,
+    "description": "",
+    "displayName": "Banana Airlines AB (10001)",
+    "email": "",
+    "emailAttachmentType": "LINK",
+    "id": 11289298,
+    "invoiceEmail": "",
+    "invoiceSendMethod": "EMAIL",
+    "invoicesDueIn": 14,
+    "invoicesDueInType": "DAYS",
+    "isCustomer": true,
+    "isFactoring": false,
+    "isInactive": false,
+    "isPrivateIndividual": false,
+    "isSupplier": false,
+    "language": "NO",
+    "ledgerAccount": Object {
+      "id": 31925215,
+      "url": "api.tripletex.io/v2/ledger/account/31925215",
+    },
+    "name": "Banana Airlines AB",
+    "organizationNumber": "",
+    "overdueNoticeEmail": "",
+    "phoneNumber": "",
+    "phoneNumberMobile": "",
+    "physicalAddress": Object {
+      "id": 26087368,
+      "url": "api.tripletex.io/v2/address/26087368",
+    },
+    "postalAddress": Object {
+      "id": 26087367,
+      "url": "api.tripletex.io/v2/address/26087367",
+    },
+    "singleCustomerInvoice": false,
+    "supplierNumber": 0,
+    "url": "api.tripletex.io/v2/customer/11289298",
+    "version": 1,
+  },
+]
+`;
