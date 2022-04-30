@@ -5,6 +5,7 @@ const projectRt = rt.Record({
   id: rt.Number,
   version: rt.Number.nullable().optional(),
   name: rt.String,
+  displayName: rt.String,
   number: rt.String.nullable().optional(),
   description: rt.String.nullable().optional(),
   projectManager: rt.Record({
