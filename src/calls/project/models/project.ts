@@ -1,5 +1,5 @@
 import * as rt from 'runtypes';
-import { multipleValuesEnvelope, resourceRef } from '../../../utils';
+import { multipleValuesEnvelope, resourceRef, singleValueEnvelope } from '../../../utils';
 
 const projectRt = rt.Record({
   id: rt.Number,
@@ -67,3 +67,4 @@ const projectRt = rt.Record({
 export type Project = rt.Static<typeof projectRt>;
 
 export const listProjectResponseRt = multipleValuesEnvelope(projectRt);
+export const createProjectResponseRt = singleValueEnvelope(projectRt);
