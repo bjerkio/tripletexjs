@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.8.0](https://github.com/bjerkio/tripletexjs/compare/v3.7.0...v3.8.0) (2022-04-30)
+
+
+### Features
+
+* add displayName to project model ([f12a038](https://github.com/bjerkio/tripletexjs/commit/f12a038a1c96901bd02a11d7906784586e207c55))
+
 ## [3.7.0](https://github.com/bjerkio/tripletexjs/compare/v3.6.2...v3.7.0) (2022-04-30)
 
 
