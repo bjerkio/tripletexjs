@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.0](https://github.com/bjerkio/tripletexjs/compare/v3.8.0...v3.9.0) (2022-05-14)
+
+
+### Features
+
+* add event method ([741fee5](https://github.com/bjerkio/tripletexjs/commit/741fee55f6dd3e42cb53c277d205b33d122ac943))
+
 ## [3.8.0](https://github.com/bjerkio/tripletexjs/compare/v3.7.0...v3.8.0) (2022-04-30)
 
 
