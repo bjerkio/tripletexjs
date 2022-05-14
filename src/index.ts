@@ -1,6 +1,7 @@
 import { TripletexActivity } from './calls/activity/activity';
 import { TripletexCustomer } from './calls/customer/customer';
 import { TripletexEmployee } from './calls/employee/employee';
+import { TripletexEvent } from './calls/event/event';
 import { TripletexProject } from './calls/project/project';
 import { TripletexTimesheet } from './calls/timesheet/timesheet';
 import { TripletexToken } from './calls/token/token';
@@ -8,6 +9,8 @@ import { TripletexClientConfig } from './types';
 export * from './calls/activity/activity';
 export * from './calls/customer/customer';
 export * from './calls/employee/employee';
+export * from './calls/event/event';
+// export * from './calls/ledger-account/ledger-account';
 export * from './calls/project/project';
 export * from './calls/timesheet/timesheet';
 export * from './calls/token/token';
@@ -29,6 +32,10 @@ export class TripletexClient {
 
   employee(): TripletexEmployee {
     return new TripletexEmployee(this.config);
+  }
+
+  event(): TripletexEvent {
+    return new TripletexEvent(this.config);
   }
 
   project(): TripletexProject {
