@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity class should create a subscription 1`] = `
+Object {
+  "authHeaderName": null,
+  "event": "invoice.charged",
+  "fields": null,
+  "id": 48620,
+  "status": "ACTIVE",
+  "targetUrl": "http://example.com",
+  "url": "api.tripletex.io/v2/event/subscription/48620",
+  "version": 0,
+}
+`;
+
+exports[`activity class should get a subscription 1`] = `
+Object {
+  "authHeaderName": null,
+  "event": "invoice.charged",
+  "fields": null,
+  "id": 48620,
+  "status": "ACTIVE",
+  "targetUrl": "http://example.com",
+  "url": "api.tripletex.io/v2/event/subscription/48620",
+  "version": 0,
+}
+`;
+
+exports[`activity class should list subscriptions 1`] = `
+Array [
+  Object {
+    "authHeaderName": null,
+    "event": "invoice.charged",
+    "fields": null,
+    "id": 48620,
+    "status": "ACTIVE",
+    "targetUrl": "http://example.com",
+    "url": "api.tripletex.io/v2/event/subscription/48620",
+    "version": 0,
+  },
+]
+`;

@@ -22,7 +22,8 @@
   "author": "Simen A. W. Olsen <so@bjerk.io> (https://bjerk.io)",
   "prettier": "@cobraz/prettier",
   "eslintConfig": {
-    "extends": "@bjerk/eslint-config"
+    "extends": "@bjerk/eslint-config",
+    "ignorePatterns": "dist/*"
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^2.0.1",
