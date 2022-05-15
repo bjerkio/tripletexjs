@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.9.1](https://github.com/bjerkio/tripletexjs/compare/v3.9.0...v3.9.1) (2022-05-15)
+
+
+### Bug Fixes
+
+* add missing timesheet-month export ([2b761c9](https://github.com/bjerkio/tripletexjs/commit/2b761c919332bcdb0d948908a4b22c6d72e8be4d))
+
 ## [3.9.0](https://github.com/bjerkio/tripletexjs/compare/v3.8.0...v3.9.0) (2022-05-14)
 
 
