@@ -15,6 +15,7 @@ import {
   UpdateTimesheetEntryInput,
 } from './types';
 export * from './models/timesheet';
+export * from './models/timesheet-month';
 
 export class TripletexTimesheet extends TripletexBase {
   listEntries(input: ListTimesheetEntriesInput) {
