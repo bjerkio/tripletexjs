@@ -6,7 +6,7 @@
 
 A wrapper for Tripletex 2.0 API in Typescript / Javascript.
 
-**We have released v3**: We are looking for feedback for the next stable release of Tripletexjs, [check out the issue](https://github.com/bjerkio/tripletexjs/issues/22) for more!
+**This is the next version of TripletexJS**: If you are looking for the automatically generated version, please check `main` branch.
 
 ## Installation
 
@@ -17,7 +17,7 @@ A wrapper for Tripletex 2.0 API in Typescript / Javascript.
 Install it via:
 
 ```shell
-npm install tripletexjs
+npm install tripletexjs@next
 ```
 
 ## Contributing
