@@ -2,6 +2,7 @@ import { TripletexActivity } from './calls/activity/activity';
 import { TripletexCustomer } from './calls/customer/customer';
 import { TripletexEmployee } from './calls/employee/employee';
 import { TripletexEvent } from './calls/event/event';
+import { TripletexOrder } from './calls/order/order';
 import { TripletexProject } from './calls/project/project';
 import { TripletexTimesheet } from './calls/timesheet/timesheet';
 import { TripletexToken } from './calls/token/token';
@@ -11,6 +12,7 @@ export * from './calls/customer/customer';
 export * from './calls/employee/employee';
 export * from './calls/event/event';
 // export * from './calls/ledger-account/ledger-account';
+export * from './calls/order/order';
 export * from './calls/project/project';
 export * from './calls/timesheet/timesheet';
 export * from './calls/token/token';
@@ -36,6 +38,10 @@ export class TripletexClient {
 
   event(): TripletexEvent {
     return new TripletexEvent(this.config);
+  }
+
+  order(): TripletexOrder {
+    return new TripletexOrder(this.config);
   }
 
   project(): TripletexProject {

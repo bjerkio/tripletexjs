@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`order create a order 1`] = `
+Object {
+  "attachment": Array [],
+  "attn": null,
+  "contact": null,
+  "currency": Object {
+    "id": 1,
+    "url": "api.tripletex.io/v2/currency/1",
+  },
+  "customer": Object {
+    "id": 11289298,
+    "url": "api.tripletex.io/v2/customer/11289298",
+  },
+  "deliveryAddress": null,
+  "deliveryComment": "",
+  "deliveryDate": "2022-01-01",
+  "department": null,
+  "id": 1580602,
+  "invoiceComment": "",
+  "invoiceOnAccountVatHigh": false,
+  "invoicesDueIn": 14,
+  "invoicesDueInType": "DAYS",
+  "isClosed": false,
+  "isPrioritizeAmountsIncludingVat": false,
+  "isShowOpenPostsOnInvoices": false,
+  "isSubscription": false,
+  "isSubscriptionAutoInvoicing": false,
+  "number": "35630692",
+  "orderDate": "2022-01-01",
+  "orderLineSorting": "PRODUCT",
+  "orderLines": Array [],
+  "overdueNoticeEmail": "",
+  "preliminaryInvoice": Object {
+    "id": 1109033,
+    "url": "api.tripletex.io/v2/invoice/1109033",
+  },
+  "project": null,
+  "receiverEmail": "",
+  "reference": "",
+  "sendMethodDescription": "Faktura må sendes manuelt.",
+  "subscriptionDuration": 0,
+  "subscriptionDurationType": "MONTHS",
+  "subscriptionInvoicingTime": 0,
+  "subscriptionInvoicingTimeInAdvanceOrArrears": "ADVANCE",
+  "subscriptionInvoicingTimeType": "MONTHS",
+  "subscriptionPeriodsOnInvoice": 0,
+  "subscriptionPeriodsOnInvoiceType": "MONTHS",
+  "totalInvoicedOnAccountAmountAbsoluteCurrency": 0,
+  "url": "api.tripletex.io/v2/order/1580602",
+  "version": 0,
+}
+`;
+
+exports[`order create a order line 1`] = `
+Object {
+  "amountExcludingVatCurrency": 0,
+  "amountIncludingVatCurrency": 0,
+  "count": 1337,
+  "currency": Object {
+    "id": 1,
+    "url": "api.tripletex.io/v2/currency/1",
+  },
+  "description": "",
+  "discount": 0,
+  "id": 1192712,
+  "inventory": Object {
+    "id": 6311,
+    "url": "api.tripletex.io/v2/inventory/6311",
+  },
+  "isSubscription": false,
+  "markup": 0,
+  "order": Object {
+    "id": 1580602,
+    "url": "api.tripletex.io/v2/order/1580602",
+  },
+  "orderGroup": null,
+  "product": Object {
+    "id": 21558874,
+    "url": "api.tripletex.io/v2/product/21558874",
+  },
+  "subscriptionPeriodEnd": null,
+  "subscriptionPeriodStart": null,
+  "unitCostCurrency": 0,
+  "unitPriceExcludingVatCurrency": 0,
+  "unitPriceIncludingVatCurrency": 0,
+  "url": "api.tripletex.io/v2/order/orderline/1192712",
+  "vatType": Object {
+    "id": 3,
+    "url": "api.tripletex.io/v2/ledger/vatType/3",
+  },
+  "version": 1,
+}
+`;

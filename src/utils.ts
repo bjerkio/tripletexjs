@@ -81,6 +81,15 @@ export function serializeQuery<T extends Object>(
 }
 
 export function parseRuntypeValidationError(error: unknown) {
+  if (error instanceof rt.ValidationError) {
+    throw new Error(
+      JSON.stringify({
+        details: error.details,
+        name: error.name,
+        code: error.code,
+      }),
+    );
+  }
   if (error instanceof TypicalWrappedError) {
     if (error.wrappedError instanceof rt.ValidationError) {
       throw new Error(
