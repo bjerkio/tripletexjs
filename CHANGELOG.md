@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.0](https://github.com/bjerkio/tripletexjs/compare/v3.9.1...v3.10.0) (2022-05-16)
+
+
+### Features
+
+* order and orderline methods ([c9b8125](https://github.com/bjerkio/tripletexjs/commit/c9b812546c2d591a7ffba2f56ca525c3cf789903))
+
 ### [3.9.1](https://github.com/bjerkio/tripletexjs/compare/v3.9.0...v3.9.1) (2022-05-15)
 
 
