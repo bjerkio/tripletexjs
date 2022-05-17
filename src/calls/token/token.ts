@@ -1,7 +1,6 @@
-import { invariant } from 'ts-invariant';
 import { buildCall } from 'typical-fetch';
 import { TripletexClientConfig } from '../../types';
-import { formatDate, withRuntype } from '../../utils';
+import { defaultBaseUrl, formatDate, withRuntype } from '../../utils';
 import { getTokenResponseRt } from './models/session-token';
 export * from './models/session-token';
 
@@ -15,9 +14,8 @@ export class TripletexToken {
   constructor(readonly config: TripletexClientConfig) {}
 
   createSessionToken(args: CreateSessionTokenInput) {
-    invariant(this.config.baseUrl, 'missing baseUrl in config');
     const call = buildCall() //
-      .baseUrl(this.config.baseUrl)
+      .baseUrl(this.config.baseUrl ?? defaultBaseUrl)
       .headers(() => ({
         'User-Agent': this.config.userAgent ?? 'bjerkio-tripletex/3',
       }))

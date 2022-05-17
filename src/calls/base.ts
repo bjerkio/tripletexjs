@@ -2,9 +2,9 @@ import { addDays } from 'date-fns';
 import { invariant } from 'ts-invariant';
 import { CallReturn, TypicalHttpError, buildCall } from 'typical-fetch';
 import { TripletexClientConfig } from '../types';
+import { defaultBaseUrl } from '../utils';
 import { TripletexToken } from './token/token';
 
-const defaultBaseUrl = 'https://tripletex.no/';
 export abstract class TripletexBase {
   private readonly tokenClient: TripletexToken;
 

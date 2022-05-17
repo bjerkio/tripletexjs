@@ -2,6 +2,8 @@ import { format, isValid } from 'date-fns';
 import * as rt from 'runtypes';
 import { TypicalWrappedError } from 'typical-fetch';
 
+export const defaultBaseUrl = 'https://tripletex.no/';
+
 export function pickFromObject<
   T extends Record<string, unknown>,
   K extends keyof T,
