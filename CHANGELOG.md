@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.11.1](https://github.com/bjerkio/tripletexjs/compare/v3.11.0...v3.11.1) (2022-05-17)
+
+
+### Bug Fixes
+
+* defaultBaseUrl issue ([c26f627](https://github.com/bjerkio/tripletexjs/commit/c26f6277472016c6a7129fd93a3574640a23c58a))
+
 ## [3.11.0](https://github.com/bjerkio/tripletexjs/compare/v3.10.0...v3.11.0) (2022-05-17)
 
 
