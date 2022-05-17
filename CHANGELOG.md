@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.0](https://github.com/bjerkio/tripletexjs/compare/v3.10.0...v3.11.0) (2022-05-17)
+
+
+### Features
+
+* add createOrderLines ([fa5afe5](https://github.com/bjerkio/tripletexjs/commit/fa5afe5ebf592c79503d9a347aa16dd9ebbcb6a8))
+
 ## [3.10.0](https://github.com/bjerkio/tripletexjs/compare/v3.9.1...v3.10.0) (2022-05-16)
 
 
