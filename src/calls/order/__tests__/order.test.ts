@@ -138,16 +138,94 @@ describe('order', () => {
     expect(order.body.value).toMatchSnapshot();
   });
 
-  it.skip('should create projects with main/parent project', async () => {
-    // const project = await client.create({
-    //   name: 'Child test project',
-    //   projectManagerId: 1734852,
-    //   startDate: new Date('2022-01-01'),
-    //   displayNameFormat: 'NAME_INCL_PARENT_NAME',
-    //   mainOrderId: 1565024,
-    // });
-    // parseRuntypeValidationError(project.error);
-    // invariant(project.success);
-    // expect(project.body.value).toMatchSnapshot();
+  it('create multiple order lines', async () => {
+    nock('https://api.tripletex.io:443', { encodedQueryParams: true })
+      .post('/v2/order/orderline/list', [
+        { count: 1337, product: { id: 21558874 }, order: { id: 1580602 } },
+        { count: 1338, product: { id: 21558874 }, order: { id: 1580602 } },
+      ])
+      .reply(201, {
+        fullResultSize: 0,
+        from: 0,
+        count: 2,
+        versionDigest: null,
+        values: [
+          {
+            id: 1192909,
+            version: 1,
+            url: 'api.tripletex.io/v2/order/orderline/1192909',
+            product: {
+              id: 21558874,
+              url: 'api.tripletex.io/v2/product/21558874',
+            },
+            inventory: {
+              id: 6311,
+              url: 'api.tripletex.io/v2/inventory/6311',
+            },
+            description: '',
+            count: 1337,
+            unitCostCurrency: 0,
+            unitPriceExcludingVatCurrency: 0,
+            currency: { id: 1, url: 'api.tripletex.io/v2/currency/1' },
+            markup: 0,
+            discount: 0,
+            vatType: { id: 3, url: 'api.tripletex.io/v2/ledger/vatType/3' },
+            amountExcludingVatCurrency: 0,
+            amountIncludingVatCurrency: 0,
+            order: { id: 1580602, url: 'api.tripletex.io/v2/order/1580602' },
+            unitPriceIncludingVatCurrency: 0,
+            isSubscription: false,
+            subscriptionPeriodStart: null,
+            subscriptionPeriodEnd: null,
+            orderGroup: null,
+          },
+          {
+            id: 1192910,
+            version: 1,
+            url: 'api.tripletex.io/v2/order/orderline/1192910',
+            product: {
+              id: 21558874,
+              url: 'api.tripletex.io/v2/product/21558874',
+            },
+            inventory: {
+              id: 6311,
+              url: 'api.tripletex.io/v2/inventory/6311',
+            },
+            description: '',
+            count: 1338,
+            unitCostCurrency: 0,
+            unitPriceExcludingVatCurrency: 0,
+            currency: { id: 1, url: 'api.tripletex.io/v2/currency/1' },
+            markup: 0,
+            discount: 0,
+            vatType: { id: 3, url: 'api.tripletex.io/v2/ledger/vatType/3' },
+            amountExcludingVatCurrency: 0,
+            amountIncludingVatCurrency: 0,
+            order: { id: 1580602, url: 'api.tripletex.io/v2/order/1580602' },
+            unitPriceIncludingVatCurrency: 0,
+            isSubscription: false,
+            subscriptionPeriodStart: null,
+            subscriptionPeriodEnd: null,
+            orderGroup: null,
+          },
+        ],
+      });
+    const order = await client.createOrderLines([
+      {
+        orderId: 1580602,
+        productId: 21558874,
+        count: 1337,
+      },
+      {
+        orderId: 1580602,
+        productId: 21558874,
+        count: 1338,
+      },
+    ]);
+
+    parseRuntypeValidationError(order.error);
+    invariant(order.success);
+
+    expect(order.body.values).toMatchSnapshot();
   });
 });

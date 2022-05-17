@@ -1,5 +1,5 @@
 import * as rt from 'runtypes';
-import { resourceRef, singleValueEnvelope } from '../../../utils';
+import { multipleValuesEnvelope, resourceRef, singleValueEnvelope } from '../../../utils';
 
 export const orderLineRt = rt.Record({
   id: rt.Number,
@@ -27,5 +27,5 @@ export const orderLineRt = rt.Record({
 
 export type OrderLine = rt.Static<typeof orderLineRt>;
 
-// export const listOrderResponseRt = multipleValuesEnvelope(orderRt);
+export const createOrderLinesResponseRt = multipleValuesEnvelope(orderLineRt);
 export const createOrderLineResponseRt = singleValueEnvelope(orderLineRt);

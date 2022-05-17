@@ -1,7 +1,10 @@
 import { serializeQuery, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import { createOrderResponseRt, listOrderResponseRt } from './models/order';
-import { createOrderLineResponseRt } from './models/order-line';
+import {
+  createOrderLineResponseRt,
+  createOrderLinesResponseRt,
+} from './models/order-line';
 import { makeOrderInput, makeOrderLineInput } from './serializers';
 import {
   CreateOrderInput,
@@ -53,6 +56,22 @@ export class TripletexOrder extends TripletexBase {
       })
       .method('post')
       .parseJson(withRuntype(createOrderLineResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ input, sessionToken }));
+  }
+
+  createOrderLines(input: CreateOrderLineInput[]) {
+    const call = this.authenticatedCall() //
+      .args<{
+        input: CreateOrderLineInput[];
+      }>()
+      .path('/v2/order/orderline/list')
+      .body(({ input }) => {
+        return input.map(orderLine => makeOrderLineInput(orderLine));
+      })
+      .method('post')
+      .parseJson(withRuntype(createOrderLinesResponseRt))
       .build();
 
     return this.performRequest(sessionToken => call({ input, sessionToken }));
