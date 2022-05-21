@@ -1,5 +1,12 @@
 # Changelog
 
+### [3.11.2](https://github.com/bjerkio/tripletexjs/compare/v3.11.1...v3.11.2) (2022-05-21)
+
+
+### Bug Fixes
+
+* create subscriptons with fields ([542920b](https://github.com/bjerkio/tripletexjs/commit/542920b50fa27b461f4b398af8fd1a54d023f8b0))
+
 ### [3.11.1](https://github.com/bjerkio/tripletexjs/compare/v3.11.0...v3.11.1) (2022-05-17)
 
 
