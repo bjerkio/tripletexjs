@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Bjerkio/tripletexjs.svg?branch=master)](https://travis-ci.org/Bjerkio/tripletexjs)
+[![codecov](https://codecov.io/gh/bjerkio/tripletexjs/branch/next/graph/badge.svg?token=4XcZJw9JXC)](https://codecov.io/gh/bjerkio/tripletexjs)
 
 ![](https://raw.githubusercontent.com/Bjerkio/tripletexjs.github.io/master/header.jpg)
 
