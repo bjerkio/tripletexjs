@@ -13,6 +13,19 @@ Object {
 }
 `;
 
+exports[`activity class should create a subscription with fields 1`] = `
+Object {
+  "authHeaderName": null,
+  "event": "project.create",
+  "fields": "id,name,number,isClosed",
+  "id": 48638,
+  "status": "ACTIVE",
+  "targetUrl": "http://example.com",
+  "url": "api.tripletex.io/v2/event/subscription/48638",
+  "version": 0,
+}
+`;
+
 exports[`activity class should get a subscription 1`] = `
 Object {
   "authHeaderName": null,

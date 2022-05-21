@@ -104,4 +104,35 @@ describe('activity class', () => {
 
     expect(subscription.body.values).toMatchSnapshot();
   });
+
+  it('should create a subscription with fields', async () => {
+    nock('https://api.tripletex.io:443', { encodedQueryParams: true })
+      .post('/v2/event/subscription', {
+        event: 'project.create',
+        targetUrl: 'http://example.com',
+        fields: 'id,name,number,isClosed',
+      })
+      .reply(201, {
+        value: {
+          id: 48638,
+          version: 0,
+          url: 'api.tripletex.io/v2/event/subscription/48638',
+          event: 'project.create',
+          targetUrl: 'http://example.com',
+          fields: 'id,name,number,isClosed',
+          status: 'ACTIVE',
+          authHeaderName: null,
+        },
+      });
+    const subscription = await client.createSubscription({
+      event: 'project.create',
+      targetUrl: 'http://example.com',
+      fields: ['id', 'name', 'number', 'isClosed'],
+    });
+
+    parseRuntypeValidationError(subscription.error);
+    invariant(subscription.success);
+
+    expect(subscription.body.value).toMatchSnapshot();
+  });
 });

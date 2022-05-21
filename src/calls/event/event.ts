@@ -1,4 +1,5 @@
-import { serializeQuery, withRuntype } from '../../utils';
+import { JsonRoot } from 'typical-fetch/dist/types';
+import { serializeQuery, toString, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import {
   createSubscriptionResponseRt,
@@ -51,9 +52,13 @@ export class TripletexEvent extends TripletexBase {
       }>()
       .path('/v2/event/subscription')
       .body(({ input }) => {
-        return {
-          ...input,
-        };
+        const payload: any = input;
+
+        if (input.fields) {
+          payload.fields = toString(input.fields);
+        }
+
+        return payload;
       })
       .method('post')
       .parseJson(withRuntype(createSubscriptionResponseRt))
