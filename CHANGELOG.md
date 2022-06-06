@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.12.0](https://github.com/bjerkio/tripletexjs/compare/v3.11.2...v3.12.0) (2022-06-06)
+
+
+### Features
+
+* Add update project method ([9cf6e21](https://github.com/bjerkio/tripletexjs/commit/9cf6e21b8fb7b5a595d4fe239a31fad0fca6c3df))
+
 ### [3.11.2](https://github.com/bjerkio/tripletexjs/compare/v3.11.1...v3.11.2) (2022-05-21)
 
 
