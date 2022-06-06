@@ -158,3 +158,5 @@ export interface CreateProjectInput {
   useProductNetPrice?: boolean;
   ignoreCompanyProductDiscountAgreement?: boolean;
 }
+
+export type UpdateProjectInput = Partial<CreateProjectInput>;

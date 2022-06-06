@@ -1,4 +1,3 @@
-import { JsonRoot } from 'typical-fetch/dist/types';
 import { serializeQuery, toString, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import {

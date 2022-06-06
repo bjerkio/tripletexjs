@@ -5,7 +5,11 @@ import {
   createProjectResponseRt,
   listProjectResponseRt,
 } from './models/project';
-import { CreateProjectInput, ListProjectsInput } from './types';
+import {
+  CreateProjectInput,
+  ListProjectsInput,
+  UpdateProjectInput,
+} from './types';
 export * from './models/project';
 
 export class TripletexProject extends TripletexBase {
@@ -65,5 +69,52 @@ export class TripletexProject extends TripletexBase {
       .build();
 
     return this.performRequest(sessionToken => call({ input, sessionToken }));
+  }
+
+  update(id: number, input: UpdateProjectInput) {
+    const call = this.authenticatedCall() //
+      .args<{
+        id: number;
+        input: UpdateProjectInput;
+      }>()
+      .path(({ id }) => `/v2/project/${id}`)
+      .body(({ input }) => {
+        const {
+          projectManagerId,
+          departmentId,
+          mainProjectId,
+          customerId,
+          projectCategoryId,
+          ...project
+        } = input;
+
+        return omitEmpty({
+          ...project,
+          startDate: project.startDate && toString(project.startDate),
+          endDate: project.endDate && toString(project.endDate),
+          projectManager: projectManagerId && {
+            id: projectManagerId,
+          },
+          department: departmentId && {
+            id: departmentId,
+          },
+          mainProject: mainProjectId && {
+            id: mainProjectId,
+          },
+          customer: customerId && {
+            id: customerId,
+          },
+          projectCategory: projectCategoryId && {
+            id: projectCategoryId,
+          },
+        }) as any;
+      })
+      .method('put')
+      .parseJson(withRuntype(createProjectResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken =>
+      call({ id, input, sessionToken }),
+    );
   }
 }

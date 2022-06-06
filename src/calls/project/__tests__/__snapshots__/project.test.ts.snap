@@ -227,3 +227,78 @@ Array [
   },
 ]
 `;
+
+exports[`activity class should update projects 1`] = `
+Object {
+  "accessType": "WRITE",
+  "attention": null,
+  "contact": null,
+  "contributionMarginPercent": 0,
+  "currency": Object {
+    "id": 1,
+    "url": "api.tripletex.io/v2/currency/1",
+  },
+  "customer": null,
+  "deliveryAddress": null,
+  "department": null,
+  "description": "",
+  "discountPercentage": 0,
+  "displayName": "35630689 Updated test project",
+  "displayNameFormat": "NAME_INCL_PARENT_NAME",
+  "endDate": null,
+  "externalAccountsNumber": "",
+  "fixedprice": 0,
+  "forParticipantsOnly": false,
+  "generalProjectActivitiesPerProjectOnly": false,
+  "hierarchyNameAndNumber": "35630689 Updated test project",
+  "id": 1565024,
+  "ignoreCompanyProductDiscountAgreement": false,
+  "invoiceComment": "",
+  "invoiceDueDate": 0,
+  "invoiceReceiverEmail": "",
+  "invoicingPlan": Array [],
+  "isClosed": false,
+  "isFixedPrice": false,
+  "isInternal": false,
+  "isOffer": false,
+  "isPriceCeiling": false,
+  "isReadyForInvoicing": false,
+  "mainProject": null,
+  "markUpFeesEarned": 0,
+  "markUpOrderLines": 0,
+  "name": "Updated test project",
+  "number": "35630689",
+  "numberOfProjectParticipants": 1,
+  "numberOfSubProjects": 1,
+  "orderLines": Array [],
+  "participants": Array [
+    Object {
+      "id": 16835,
+      "url": "api.tripletex.io/v2/project/participant/16835",
+    },
+  ],
+  "preliminaryInvoice": null,
+  "priceCeilingAmount": 0,
+  "projectActivities": Array [],
+  "projectCategory": null,
+  "projectHourlyRates": Array [
+    Object {
+      "id": 50307,
+      "url": "api.tripletex.io/v2/project/hourlyRates/50307",
+    },
+  ],
+  "projectManager": Object {
+    "id": 1734852,
+    "url": "api.tripletex.io/v2/employee/1734852",
+  },
+  "reference": "",
+  "startDate": "2022-05-01",
+  "url": "api.tripletex.io/v2/project/1565024",
+  "useProductNetPrice": false,
+  "vatType": Object {
+    "id": 3,
+    "url": "api.tripletex.io/v2/ledger/vatType/3",
+  },
+  "version": 2,
+}
+`;
