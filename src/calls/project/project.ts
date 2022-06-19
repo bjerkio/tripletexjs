@@ -10,6 +10,7 @@ import {
   ListProjectsInput,
   UpdateProjectInput,
 } from './types';
+export * from './types';
 export * from './models/project';
 
 export class TripletexProject extends TripletexBase {

@@ -11,6 +11,7 @@ import {
   CreateOrderLineInput,
   ListOrdersInput,
 } from './types';
+export * from './types';
 export * from './models/order';
 export * from './models/order-line';
 

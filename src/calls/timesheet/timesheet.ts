@@ -14,6 +14,7 @@ import {
   TimesheetEntryInput,
   UpdateTimesheetEntryInput,
 } from './types';
+export * from './types';
 export * from './models/timesheet';
 export * from './models/timesheet-month';
 

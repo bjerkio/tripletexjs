@@ -2,6 +2,7 @@ import { serializeQuery, withRuntype } from '../../utils';
 import { TripletexBase } from '../base';
 import { listCustomerResponseRt } from './models/customer';
 import { ListCustomersInput } from './types';
+export * from './types';
 export * from './models/customer';
 
 export class TripletexCustomer extends TripletexBase {

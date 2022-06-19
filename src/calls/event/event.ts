@@ -6,6 +6,7 @@ import {
   listSubscriptionResponseRt,
 } from './models/subscription';
 import { CreateSubscriptionInput, ListSubscriptionsInput } from './types';
+export * from './types';
 export * from './models/subscription';
 
 export class TripletexEvent extends TripletexBase {
