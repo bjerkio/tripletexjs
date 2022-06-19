@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.14.0](https://github.com/bjerkio/tripletexjs/compare/v3.13.0...v3.14.0) (2022-06-19)
+
+
+### Features
+
+* Add one timesheet entry ([b4de50b](https://github.com/bjerkio/tripletexjs/commit/b4de50b39a2b718d5135e042e6ba32be6effaa14))
+
 ## [3.13.0](https://github.com/bjerkio/tripletexjs/compare/v3.12.0...v3.13.0) (2022-06-19)
 
 
