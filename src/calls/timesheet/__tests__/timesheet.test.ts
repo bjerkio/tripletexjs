@@ -307,6 +307,51 @@ describe('activity class', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should add one timesheet entry', async () => {
+    nock('https://api.tripletex.io:443', { encodedQueryParams: true })
+      .post('/v2/timesheet/entry', {
+        employee: { id: 1734852 },
+        activity: { id: 45239 },
+        date: '2022-05-01',
+        hours: 20,
+        comment: 'This is from bjerkio/tripletexjs',
+      })
+      .reply(201, {
+        value: {
+          id: 1211978,
+          version: 0,
+          url: 'api.tripletex.io/v2/timesheet/entry/1211978',
+          project: null,
+          activity: { id: 45239, url: 'api.tripletex.io/v2/activity/45239' },
+          date: '2022-05-01',
+          hours: 20,
+          chargeableHours: 0,
+          employee: {
+            id: 1734852,
+            url: 'api.tripletex.io/v2/employee/1734852',
+          },
+          timeClocks: [],
+          comment: 'This is from bjerkio/tripletexjs',
+          locked: false,
+          chargeable: false,
+          invoice: null,
+          hourlyRate: 0,
+          hourlyCost: 0,
+          hourlyCostPercentage: 0,
+        },
+      });
+    const result = await client.addEntry({
+      employeeId: 1734852,
+      activityId: 45239,
+      date: new Date('2022-04-31'),
+      hours: 20,
+      comment: 'This is from bjerkio/tripletexjs',
+    });
+    parseRuntypeValidationError(result.error);
+    invariant(result.success);
+    expect(result).toMatchSnapshot();
+  });
+
   it('should get status on timesheet month', async () => {
     nock(baseUrl, { encodedQueryParams: true })
       .get('/v2/timesheet/month/byMonthNumber')
@@ -363,7 +408,7 @@ describe('activity class', () => {
           },
         ],
       });
-      
+
     const entries = await client.getMonthByMonthNumber({
       employeeIds: ['1734852'],
       monthYear: new Date('2022-03-01'),

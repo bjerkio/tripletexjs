@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`activity class should add one timesheet entry 1`] = `
+Object {
+  "body": Object {
+    "value": Object {
+      "activity": Object {
+        "id": 45239,
+        "url": "api.tripletex.io/v2/activity/45239",
+      },
+      "chargeable": false,
+      "chargeableHours": 0,
+      "comment": "This is from bjerkio/tripletexjs",
+      "date": "2022-05-01",
+      "employee": Object {
+        "id": 1734852,
+        "url": "api.tripletex.io/v2/employee/1734852",
+      },
+      "hourlyCost": 0,
+      "hourlyCostPercentage": 0,
+      "hourlyRate": 0,
+      "hours": 20,
+      "id": 1211978,
+      "invoice": null,
+      "locked": false,
+      "project": null,
+      "timeClocks": Array [],
+      "url": "api.tripletex.io/v2/timesheet/entry/1211978",
+      "version": 0,
+    },
+  },
+  "error": undefined,
+  "success": true,
+}
+`;
+
 exports[`activity class should add timesheet entries 1`] = `
 Object {
   "body": Object {

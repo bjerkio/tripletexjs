@@ -1,5 +1,5 @@
 import * as rt from 'runtypes';
-import { multipleValuesEnvelope } from '../../../utils';
+import { multipleValuesEnvelope, singleValueEnvelope } from '../../../utils';
 
 const timesheetRt = rt.Record({
   id: rt.Number,
@@ -34,3 +34,4 @@ const timesheetRt = rt.Record({
 export type Timesheet = rt.Static<typeof timesheetRt>;
 
 export const listTimesheetResponseRt = multipleValuesEnvelope(timesheetRt);
+export const addTimesheetResponseRt = singleValueEnvelope(timesheetRt);

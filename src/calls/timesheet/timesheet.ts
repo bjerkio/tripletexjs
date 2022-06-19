@@ -6,7 +6,10 @@ import {
   withRuntype,
 } from '../../utils';
 import { TripletexBase } from '../base';
-import { listTimesheetResponseRt } from './models/timesheet';
+import {
+  addTimesheetResponseRt,
+  listTimesheetResponseRt,
+} from './models/timesheet';
 import { getTimesheetMonthResponseRt } from './models/timesheet-month';
 import {
   GetMonthByMonthNumberInput,
@@ -65,6 +68,38 @@ export class TripletexTimesheet extends TripletexBase {
       .build();
 
     return this.performRequest(sessionToken => call({ sessionToken }));
+  }
+
+  addEntry(input: TimesheetEntryInput) {
+    const call = this.authenticatedCall()
+      .args<{ input: TimesheetEntryInput }>()
+      .path('/v2/timesheet/entry')
+      .body(({ input }) => {
+        const entry: Record<string, any> = {
+          employee: {
+            id: input.employeeId,
+          },
+          activity: {
+            id: input.activityId,
+          },
+          date: formatDate(input.date),
+          hours: input.hours,
+          comment: input.comment,
+        };
+
+        if (input.projectId) {
+          entry.project = {
+            id: input.projectId,
+          };
+        }
+
+        return omitEmpty(entry) as Record<string, any>;
+      })
+      .method('post')
+      .parseJson(withRuntype(addTimesheetResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ input, sessionToken }));
   }
 
   addEntries(entries: TimesheetEntryInput[]) {
