@@ -8,6 +8,21 @@ A wrapper for Tripletex 2.0 API in Typescript / Javascript.
 
 **This is the next version of TripletexJS**: If you are looking for the automatically generated version, please check `main` branch.
 
+The `v3` (next) version is reworked from the ground up, to become a fully tailored client. This client has been used in production
+by many of [Bjerk](https://github.com/bjerkio)s customers and other software vendors and consultants for around six years.
+
+For most of these years, we built the client with Swagger Codegen. Code generation based on the OpenAPI / Swagger file had apparent
+benefits of being kept updated with the Tripletex API. However, it had a lot to be desired in the usability department.
+
+After working on integrations with Folio, a Norwegian neo-bank, we realized it was time for the client to get an overhaul. We wanted
+runtime type safety and a hand-tailored developer experience.
+
+Tripletexjs@next features types defined with [runtypes] and [typical-fetch]. Runtypes gives us type-safety in runtime, while
+typical-fetch gives us a nice way to interface with Tripletex methods while having type-safety.
+
+[runtypes]: https://github.com/pelotom/runtypes
+[typical-fetch]: https://github.com/runeh/typical-fetch
+
 ## Installation
 
 ### For [Node.js](https://nodejs.org/)
@@ -25,9 +40,7 @@ npm install tripletexjs@next
 Send bug reports, feature requests, and code contributions to this
 repository. The repository is maintained by Bjerk AS (Simen A. W. Olsen).
 
-Contributions to this library is much appreciated. We are currently
-working on creating a script that automatically updates the repository
-when Tripletex updates their Swagger file. Please have a look at <thead>
+Contributions to this library is much appreciated. Please have a look at
 project tab or issues for more information on current help-needed.
 
 ## Disclaimer
