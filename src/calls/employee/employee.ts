@@ -23,6 +23,11 @@ export interface ListEmployeesInput extends DefaultTripletexInputs {
   /**
    * Containing
    */
+  email?: string;
+
+  /**
+   * Containing
+   */
   employeeNumber?: string;
 
   allowInformationRegistration?: boolean;
