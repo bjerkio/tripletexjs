@@ -1,7 +1,7 @@
 import * as rt from 'runtypes';
 import { multipleValuesEnvelope } from '../../../utils';
 
-const employeeRt = rt.Record({
+export const employeeRt = rt.Record({
   id: rt.Number,
   version: rt.Number.nullable().optional(),
   firstName: rt.String,

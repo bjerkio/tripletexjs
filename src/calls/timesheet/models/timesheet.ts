@@ -1,5 +1,6 @@
 import * as rt from 'runtypes';
 import { multipleValuesEnvelope, singleValueEnvelope } from '../../../utils';
+import { employeeRt } from '../../employee/employee';
 
 const timesheetRt = rt.Record({
   id: rt.Number,
@@ -19,9 +20,7 @@ const timesheetRt = rt.Record({
   date: rt.String,
   hours: rt.Number,
   chargeableHours: rt.Number.optional(),
-  employee: rt.Record({
-    id: rt.Number,
-  }),
+  employee: employeeRt,
   // timeClocks: rt.Array(rt.String),
   comment: rt.String.optional(),
   locked: rt.Boolean,
