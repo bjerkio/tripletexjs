@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.15.0](https://github.com/bjerkio/tripletexjs/compare/v3.14.0...v3.15.0) (2023-01-13)
+
+
+### Features
+
+* add email to employee input ([#62](https://github.com/bjerkio/tripletexjs/issues/62)) ([995bff0](https://github.com/bjerkio/tripletexjs/commit/995bff00ea1d7ed396aaf6b69ad43ccb3a4cc30c))
+
 ## [3.14.0](https://github.com/bjerkio/tripletexjs/compare/v3.13.0...v3.14.0) (2022-06-19)
 
 
