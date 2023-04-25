@@ -28,4 +28,4 @@ jobs:
           CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
           EMPLOYEE_TOKEN: ${{ secrets.EMPLOYEE_TOKEN }}
 
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v3
