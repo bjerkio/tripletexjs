@@ -1,0 +1,21 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Analyse commits and open PR or prepare release 📦
+        uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.BJERKBOT_GITHUB_TOKEN }}
+          release-type: node
+          package-name: tripletexjs
+          default-branch: next
