@@ -25,6 +25,14 @@ jobs:
         run: yarn build
 
       - name: Publish 🚀
-        run: yarn publish --tag next
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push version changes to main branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: release ${{ github.event.release.tag_name }}"
+          branch: main
+          file_pattern: package.json
+
