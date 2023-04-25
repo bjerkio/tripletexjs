@@ -71,10 +71,11 @@ export class TripletexTimesheet extends TripletexBase {
   }
 
   addEntry(input: TimesheetEntryInput) {
+    type Args = { input: TimesheetEntryInput };
     const call = this.authenticatedCall()
-      .args<{ input: TimesheetEntryInput }>()
+      .args<Args>()
       .path('/v2/timesheet/entry')
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         const entry: Record<string, any> = {
           employee: {
             id: input.employeeId,

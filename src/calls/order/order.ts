@@ -31,14 +31,15 @@ export class TripletexOrder extends TripletexBase {
   }
 
   create(input: CreateOrderInput) {
+    type Args = {
+      input: CreateOrderInput;
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        input: CreateOrderInput;
-      }>()
-      .path('/v2/order')
-      .body(({ input }) => {
+      .args<Args>()
+      .body(({ input }: Args) => {
         return makeOrderInput(input);
       })
+      .path('/v2/order')
       .method('post')
       .parseJson(withRuntype(createOrderResponseRt))
       .build();
@@ -47,12 +48,13 @@ export class TripletexOrder extends TripletexBase {
   }
 
   createOrderLine(input: CreateOrderLineInput) {
+    type Args = {
+      input: CreateOrderLineInput;
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        input: CreateOrderLineInput;
-      }>()
+      .args<Args>()
       .path('/v2/order/orderline')
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         return makeOrderLineInput(input);
       })
       .method('post')
@@ -63,12 +65,13 @@ export class TripletexOrder extends TripletexBase {
   }
 
   createOrderLines(input: CreateOrderLineInput[]) {
+    type Args = {
+      input: CreateOrderLineInput[];
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        input: CreateOrderLineInput[];
-      }>()
+      .args<Args>()
       .path('/v2/order/orderline/list')
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         return input.map(orderLine => makeOrderLineInput(orderLine));
       })
       .method('post')

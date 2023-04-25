@@ -29,12 +29,13 @@ export class TripletexProject extends TripletexBase {
   }
 
   create(input: CreateProjectInput) {
+    type Args = {
+      input: CreateProjectInput;
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        input: CreateProjectInput;
-      }>()
+      .args<Args>()
       .path('/v2/project')
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         const {
           projectManagerId,
           departmentId,
@@ -73,13 +74,14 @@ export class TripletexProject extends TripletexBase {
   }
 
   update(id: number, input: UpdateProjectInput) {
+    type Args = {
+      id: number;
+      input: UpdateProjectInput;
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        id: number;
-        input: UpdateProjectInput;
-      }>()
+      .args<Args>()
       .path(({ id }) => `/v2/project/${id}`)
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         const {
           projectManagerId,
           departmentId,

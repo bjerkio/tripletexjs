@@ -46,12 +46,13 @@ export class TripletexEvent extends TripletexBase {
   }
 
   createSubscription(input: CreateSubscriptionInput) {
+    type Args = {
+      input: CreateSubscriptionInput;
+    };
     const call = this.authenticatedCall() //
-      .args<{
-        input: CreateSubscriptionInput;
-      }>()
+      .args<Args>()
       .path('/v2/event/subscription')
-      .body(({ input }) => {
+      .body(({ input }: Args) => {
         const payload: any = input;
 
         if (input.fields) {
