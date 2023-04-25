@@ -25,7 +25,7 @@ jobs:
         run: yarn build
 
       - name: Publish 🚀
-        run: yarn publish
+        run: yarn publish --non-interactive --new-version ${{ github.event.release.tag_name }} --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
