@@ -25,9 +25,10 @@ jobs:
         run: yarn build
 
       - name: Publish 🚀
-        run: yarn publish --non-interactive --new-version ${{ github.event.release.tag_name }} --no-git-tag-version
+        run: yarn publish --non-interactive --new-version ${TAG#v} --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
 
       - name: Push version changes to main branch
         uses: stefanzweifel/git-auto-commit-action@v4
