@@ -29,6 +29,12 @@ const timesheetRt = rt.Record({
   hourlyRate: rt.Number,
   hourlyCost: rt.Number,
   hourlyCostPercentage: rt.Number,
+  invoice: rt
+    .Record({
+      id: rt.Number,
+    })
+    .nullable()
+    .optional(),
 });
 
 export type Timesheet = rt.Static<typeof timesheetRt>;
