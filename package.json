@@ -20,21 +20,21 @@
   "repository": "github:bjerkio/tripletexjs",
   "license": "Apache-2.0",
   "author": "Simen A. W. Olsen <so@bjerk.io> (https://bjerk.io)",
-  "prettier": "@cobraz/prettier",
+  "prettier": "@simenandre/prettier",
   "eslintConfig": {
     "extends": "@bjerk/eslint-config",
     "ignorePatterns": "dist/*"
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^2.0.1",
-    "@cobraz/prettier": "^2.0.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/jest": "^28.1.2",
     "@types/omit-empty": "^1.0.1",
     "jest": "^28.1.1",
     "nock": "^13.2.7",
     "ts-jest": "^28.0.5",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "@simenandre/prettier": "3.0.2"
   },
   "dependencies": {
     "date-fns": "^2.28.0",
