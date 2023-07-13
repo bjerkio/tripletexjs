@@ -21,10 +21,6 @@
   "license": "Apache-2.0",
   "author": "Simen A. W. Olsen <so@bjerk.io> (https://bjerk.io)",
   "prettier": "@simenandre/prettier",
-  "eslintConfig": {
-    "extends": "@bjerk/eslint-config",
-    "ignorePatterns": "dist/*"
-  },
   "devDependencies": {
     "@bjerk/eslint-config": "^4.0.0",
     "@tsconfig/node16": "^1.0.3",
