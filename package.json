@@ -30,7 +30,7 @@
     "nock": "^13.2.7",
     "ts-jest": "^28.0.5",
     "typescript": "^5.0.0",
-    "@simenandre/prettier": "4.0.1"
+    "@simenandre/prettier": "5.0.0"
   },
   "dependencies": {
     "date-fns": "^2.28.0",
