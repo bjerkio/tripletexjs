@@ -555,10 +555,10 @@
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/semver-v6/-/semver-v6-6.3.3.tgz#ea6d23ade78a325f7a52750aab1526b02b628c29"
   integrity sha512-3Yc1fUTs69MG/uZbJlLSI3JISMn2UV2rg+1D/vROUqZyh3l6iYHCs7GMp+M40ZD7yOdDbYjJcU1oTJhrc+dGKg==
 
-"@simenandre/prettier@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@simenandre/prettier/-/prettier-4.0.1.tgz#0ec2bc0a81d81e4ae0dd5bc6efa7e9408aace2ce"
-  integrity sha512-7ys2sGGqVQ1rTtjOgbgOwLDSUNRw/PiaCAWv97dE1d2VZDFxGNvn1BIQqhJrYL3jZBKAKSLH7evkzL8G6QB3ew==
+"@simenandre/prettier@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@simenandre/prettier/-/prettier-4.1.1.tgz#c08104d85d2328a90982c90879a942506a782535"
+  integrity sha512-+1xJlwtNm0xwafWZU4IAh+T7n/yxulfcfpZTRLVkyFSY6t9+dhSbtBVPOZJ/lt+bqLb1FV2+eecqgALUpApcyg==
   dependencies:
     prettier-plugin-package-perfection "^1.1.0"
 
