@@ -1,6 +1,6 @@
 [![codecov](https://codecov.io/gh/bjerkio/tripletexjs/branch/next/graph/badge.svg?token=4XcZJw9JXC)](https://codecov.io/gh/bjerkio/tripletexjs)
 
-![](https://raw.githubusercontent.com/Bjerkio/tripletexjs.github.io/master/header.jpg)
+![](https://repository-images.githubusercontent.com/53575518/66db1ffc-5563-474c-9110-3a0ee02b5c45)
 
 ## Tripletex 2.0 Node.js / Javascript / Typescript API Wrapper
 
