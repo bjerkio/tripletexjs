@@ -15,14 +15,16 @@ const contactRt = rt.Record({
   })
   .nullable()
   .optional(),
-phoneNumberMobile: rt.String.nullable().optional(),
-phoneNumberWork: rt.String.nullable().optional(),
-customer: rt.Record({
-  id: rt.Number,
-}),
-department: rt.Record({
-  id: rt.Number,
-}),
+  phoneNumberMobile: rt.String.nullable().optional(),
+  phoneNumberWork: rt.String.nullable().optional(),
+  customer: rt.Record({
+    id: rt.Number,
+    url: rt.String,
+  }),
+  department: rt.Record({
+    id: rt.Number,
+    url: rt.String,
+  }),
   isInactive: rt.Boolean.nullable().optional(),
 })
 

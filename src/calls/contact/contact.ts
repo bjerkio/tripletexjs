@@ -1,7 +1,7 @@
 import { DefaultTripletexInputs } from "../../types";
 import { serializeQuery, withRuntype } from "../../utils";
 import { TripletexBase } from "../base";
-import { listEmployeesResponseRt } from "../employee/employee";
+import { listContactsResponseRt } from "./models/contact";
 
 export interface ListContactsInput extends DefaultTripletexInputs {
   /**
@@ -66,10 +66,10 @@ export class TripletexContact extends TripletexBase {
       .args<{
         input?: ListContactsInput;
       }>()
-      .path('/v2/employee')
+      .path('/v2/contact')
       .query(args => (args.input ? serializeQuery(args.input) : {}))
       .method('get')
-      .parseJson(withRuntype(listEmployeesResponseRt))
+      .parseJson(withRuntype(listContactsResponseRt))
       .build();
 
     return this.performRequest(sessionToken => call({ input, sessionToken }));
