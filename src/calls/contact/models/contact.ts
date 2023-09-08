@@ -20,11 +20,11 @@ const contactRt = rt.Record({
   customer: rt.Record({
     id: rt.Number,
     url: rt.String,
-  }),
+  }).nullable(),
   department: rt.Record({
     id: rt.Number,
     url: rt.String,
-  }),
+  }).nullable(),
   isInactive: rt.Boolean.nullable().optional(),
 })
 
