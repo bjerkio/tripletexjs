@@ -53,27 +53,24 @@ describe('activity class', () => {
     expect(entries.body.values).toMatchInlineSnapshot(`
 Array [
   Object {
-    "customer": Object {
-      "id": 88885,
-      "url": "api.tripletex.io/v2/customer/88885",
-    },
+    "customer": null,
     "department": Object {
       "id": 88885,
-      "url": "api.tripletex.io/v2/department/88885",
+      "url": "tripletex.no/v2/department/88885",
     },
-    "displayName": "Simen A. W. Olsen API Testuser",
-    "email": "an@email.co.uk",
-    "firstName": "Simen A. W. Olsen",
-    "id": 1734852,
+    "displayName": "Fastprisavtale",
+    "email": "",
+    "firstName": "Fastprisavtale",
+    "id": 9004148,
     "isInactive": false,
-    "lastName": "API Testuser",
+    "lastName": "",
     "phoneNumberMobile": "",
     "phoneNumberMobileCountry": Object {
       "id": 161,
-      "url": "api.tripletex.io/v2/country/161",
+      "url": "tripletex.no/v2/country/161",
     },
     "phoneNumberWork": "",
-    "url": "api.tripletex.io/v2/contact/1734852",
+    "url": "tripletex.no/v2/contact/88885",
     "version": 1,
   },
 ]
