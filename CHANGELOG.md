@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.17.0](https://github.com/bjerkio/tripletexjs/compare/v3.16.0...v3.17.0) (2023-09-08)
+
+
+### Features
+
+* add contacts query ([#108](https://github.com/bjerkio/tripletexjs/issues/108)) ([8c6d6d3](https://github.com/bjerkio/tripletexjs/commit/8c6d6d3de4943aa2db36c1c1c68aa42195ad8a05))
+
+
+### Bug Fixes
+
+* use correct branch for releases ([#109](https://github.com/bjerkio/tripletexjs/issues/109)) ([c78e501](https://github.com/bjerkio/tripletexjs/commit/c78e5016434a5fd2a82f7c7fd7a91f790dda92e4))
+
 ## [3.15.0](https://github.com/bjerkio/tripletexjs/compare/v3.14.0...v3.15.0) (2023-01-13)
 
 
