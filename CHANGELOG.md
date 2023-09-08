@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.17.1](https://github.com/bjerkio/tripletexjs/compare/v3.17.0...v3.17.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* add contact to client ([#111](https://github.com/bjerkio/tripletexjs/issues/111)) ([538c086](https://github.com/bjerkio/tripletexjs/commit/538c086a2d96b268b757dda1eaa62511232da1fa))
+
 ## [3.17.0](https://github.com/bjerkio/tripletexjs/compare/v3.16.0...v3.17.0) (2023-09-08)
 
 
