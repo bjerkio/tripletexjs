@@ -1,4 +1,5 @@
 import { TripletexActivity } from './calls/activity/activity';
+import { TripletexContact } from './calls/contact/contact';
 import { TripletexCustomer } from './calls/customer/customer';
 import { TripletexEmployee } from './calls/employee/employee';
 import { TripletexEvent } from './calls/event/event';
@@ -26,6 +27,10 @@ export class TripletexClient {
 
   activity(): TripletexActivity {
     return new TripletexActivity(this.config);
+  }
+
+  contact(): TripletexContact {
+    return new TripletexContact(this.config);
   }
 
   customer(): TripletexCustomer {
