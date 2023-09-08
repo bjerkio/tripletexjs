@@ -24,29 +24,26 @@ describe('activity class', () => {
         versionDigest: 'Checksum not yet supported for this endpoint',
         values: [
           {
-            id: 1734852,
-            version: 1,
-            url: 'api.tripletex.io/v2/contact/1734852',
-            firstName: 'Simen A. W. Olsen',
-            lastName: 'API Testuser',
-            displayName: 'Simen A. W. Olsen API Testuser',
-            email: 'an@email.co.uk',
-            phoneNumberMobileCountry: {
-              id: 161,
-              url: 'api.tripletex.io/v2/country/161',
+            "id" : 9004148,
+            "version" : 1,
+            "url" : "tripletex.no/v2/contact/88885",
+            "firstName" : "Fastprisavtale",
+            "lastName" : "",
+            "displayName" : "Fastprisavtale",
+            "email" : "",
+            "phoneNumberMobileCountry" : {
+              "id" : 161,
+              "url" : "tripletex.no/v2/country/161"
             },
-            phoneNumberMobile: '',
-            phoneNumberWork: '',
-            customer: {
-              id: 88885,
-              url: 'api.tripletex.io/v2/customer/88885',
+            "phoneNumberMobile" : "",
+            "phoneNumberWork" : "",
+            "customer" : null,
+            "department" : {
+              "id" : 88885,
+              "url" : "tripletex.no/v2/department/88885"
             },
-            department: {
-              id: 88885,
-              url: 'api.tripletex.io/v2/department/88885',
-            },
-            isInactive: false,
-          },
+            "isInactive" : false
+          }
         ],
       });
     const entries = await client.list();
@@ -56,27 +53,24 @@ describe('activity class', () => {
     expect(entries.body.values).toMatchInlineSnapshot(`
 Array [
   Object {
-    "customer": Object {
-      "id": 88885,
-      "url": "api.tripletex.io/v2/customer/88885",
-    },
+    "customer": null,
     "department": Object {
       "id": 88885,
-      "url": "api.tripletex.io/v2/department/88885",
+      "url": "tripletex.no/v2/department/88885",
     },
-    "displayName": "Simen A. W. Olsen API Testuser",
-    "email": "an@email.co.uk",
-    "firstName": "Simen A. W. Olsen",
-    "id": 1734852,
+    "displayName": "Fastprisavtale",
+    "email": "",
+    "firstName": "Fastprisavtale",
+    "id": 9004148,
     "isInactive": false,
-    "lastName": "API Testuser",
+    "lastName": "",
     "phoneNumberMobile": "",
     "phoneNumberMobileCountry": Object {
       "id": 161,
-      "url": "api.tripletex.io/v2/country/161",
+      "url": "tripletex.no/v2/country/161",
     },
     "phoneNumberWork": "",
-    "url": "api.tripletex.io/v2/contact/1734852",
+    "url": "tripletex.no/v2/contact/88885",
     "version": 1,
   },
 ]
