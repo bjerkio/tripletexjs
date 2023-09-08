@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.17.2](https://github.com/bjerkio/tripletexjs/compare/v3.17.1...v3.17.2) (2023-09-08)
+
+
+### Bug Fixes
+
+* make customer and department nullable, add realistic sample data in test ([#113](https://github.com/bjerkio/tripletexjs/issues/113)) ([0bad1de](https://github.com/bjerkio/tripletexjs/commit/0bad1de771e6cb67c284c7dc13f763b5724fa2c4))
+
 ## [3.17.1](https://github.com/bjerkio/tripletexjs/compare/v3.17.0...v3.17.1) (2023-09-08)
 
 
