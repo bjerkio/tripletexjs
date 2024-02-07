@@ -26,3 +26,4 @@ export type Subscription = rt.Static<typeof subscriptionRt>;
 export const listSubscriptionResponseRt = multipleValuesEnvelope(subscriptionRt);
 export const createSubscriptionResponseRt = singleValueEnvelope(subscriptionRt);
 export const getSubscriptionResponseRt = singleValueEnvelope(subscriptionRt);
+export const reactivateSubscriptionResponseRt = singleValueEnvelope(subscriptionRt);
