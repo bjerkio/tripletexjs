@@ -21,6 +21,21 @@ export class TripletexEvent extends TripletexBase {
     return this.performRequest(sessionToken => call({ id, sessionToken }));
   }
 
+  reactivateSubscription(id: number) {
+    const requestBody = {
+      status: "ACTIVE",
+    }
+    const call = this.authenticatedCall()
+      .args<{ id: number }>()
+      .path(({ id }) => `/v2/event/subscription/${id}`)
+      .method('put')
+      .body(requestBody)
+      .parseJson(withRuntype(getSubscriptionResponseRt))
+      .build();
+
+    return this.performRequest(sessionToken => call({ id, sessionToken }));
+  }
+
   deleteSubscription(id: number) {
     const call = this.authenticatedCall() //
       .args<{ id: number }>()
