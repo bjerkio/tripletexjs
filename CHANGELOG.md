@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.18.0](https://github.com/bjerkio/tripletexjs/compare/v3.17.2...v3.18.0) (2024-02-08)
+
+
+### Features
+
+* add reactivate subscription method ([#122](https://github.com/bjerkio/tripletexjs/issues/122)) ([e31e323](https://github.com/bjerkio/tripletexjs/commit/e31e3238fc6b1b7347072369b7aa947d0605611b))
+
 ## [3.17.2](https://github.com/bjerkio/tripletexjs/compare/v3.17.1...v3.17.2) (2023-09-08)
 
 
