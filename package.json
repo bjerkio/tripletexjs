@@ -24,11 +24,11 @@
   "devDependencies": {
     "@bjerk/eslint-config": "^5.0.0",
     "@tsconfig/node16": "^1.0.3",
-    "@types/jest": "^28.1.2",
+    "@types/jest": "^29.0.0",
     "@types/omit-empty": "^1.0.1",
-    "jest": "^28.1.1",
+    "jest": "^29.0.0",
     "nock": "^13.2.7",
-    "ts-jest": "^28.0.5",
+    "ts-jest": "^29.0.0",
     "typescript": "^5.0.0",
     "@simenandre/prettier": "5.0.0"
   },
