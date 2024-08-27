@@ -19,7 +19,7 @@ export interface CreateSubscriptionInput {
    * The fields in the object delivered
    * with the notification callback, nested as in other API calls.
    */
-  fields?: string[];
+  fields?: string;
 
   /**
    * Custom authentication header name

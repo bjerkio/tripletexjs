@@ -127,7 +127,7 @@ describe('activity class', () => {
     const subscription = await client.createSubscription({
       event: 'project.create',
       targetUrl: 'http://example.com',
-      fields: ['id', 'name', 'number', 'isClosed'],
+      fields: 'id,name,number,isClosed',
     });
 
     parseRuntypeValidationError(subscription.error);
