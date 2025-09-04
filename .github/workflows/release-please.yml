@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Analyse commits and open PR or prepare release 📦
         uses: google-github-actions/release-please-action@v3
