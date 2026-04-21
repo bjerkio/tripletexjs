@@ -4,7 +4,6 @@ on:
     branches:
       - main
   pull_request:
-    
 
 jobs:
   build:
@@ -17,13 +16,13 @@ jobs:
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn install
+      - run: pnpm install
 
-      - run: yarn run build
+      - run: pnpm run build
 
-      - run: yarn test
+      - run: pnpm test
         env:
           CI: true
           BASE_URL: https://api.tripletex.io/

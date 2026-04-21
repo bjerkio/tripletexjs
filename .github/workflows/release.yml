@@ -16,16 +16,18 @@ jobs:
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies 📦️
-        run: yarn install --immutable
+        run: pnpm install --immutable
 
       - name: Build 🔨
-        run: yarn build
+        run: pnpm build
 
       - name: Publish 🚀
-        run: yarn publish --non-interactive --new-version ${TAG#v} --no-git-tag-version
+        run:
+          pnpm publish --non-interactive --new-version ${TAG#v}
+          --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           TAG: ${{ github.event.release.tag_name }}
@@ -33,7 +35,6 @@ jobs:
       - name: Push version changes to main branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: release ${{ github.event.release.tag_name }}"
+          commit_message: 'chore: release ${{ github.event.release.tag_name }}'
           branch: main
           file_pattern: package.json
-
