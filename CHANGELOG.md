@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.0.0](https://github.com/bjerkio/tripletexjs/compare/v3.18.0...v4.0.0) (2026-04-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* allow activityType on activity to be null ([#137](https://github.com/bjerkio/tripletexjs/issues/137))
+
+### Features
+
+* add test for toString ([#125](https://github.com/bjerkio/tripletexjs/issues/125)) ([4ee4456](https://github.com/bjerkio/tripletexjs/commit/4ee4456563f4c82e20d384d418225c220ef8a66d))
+
+
+### Bug Fixes
+
+* allow activityType on activity to be null ([#137](https://github.com/bjerkio/tripletexjs/issues/137)) ([031a20e](https://github.com/bjerkio/tripletexjs/commit/031a20e2f90d8c2efcd0af604e18a972fce659e1))
+
 ## [3.18.0](https://github.com/bjerkio/tripletexjs/compare/v3.17.2...v3.18.0) (2024-02-08)
 
 
