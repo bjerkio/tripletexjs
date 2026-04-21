@@ -36,7 +36,7 @@ way to interface with Tripletex methods while having type-safety.
 Install it via:
 
 ```shell
-yarn add tripletexjs
+pnpm add tripletexjs
 ```
 
 ## Contributing
