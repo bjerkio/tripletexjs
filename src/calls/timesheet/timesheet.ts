@@ -141,7 +141,7 @@ export class TripletexTimesheet extends TripletexBase {
       .args<{
         input: GetMonthByMonthNumberInput;
       }>()
-      .path('/v2/timesheet/month/byMonthNumber')
+      .path('/v2/timesheet/month/byMonthNumberList')
       .query(({ input: { monthYear, ...q } }) => ({
         ...serializeQuery(q),
         monthYear: formatMonthYear(monthYear),
