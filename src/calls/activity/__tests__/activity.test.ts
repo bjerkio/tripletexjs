@@ -163,4 +163,74 @@ Array [
 ]
 `);
   });
+
+  it('should accept null activityType from API', async () => {
+    nock(baseUrl, { encodedQueryParams: true })
+      .get('/v2/activity')
+      .reply(200, {
+        fullResultSize: 3,
+        from: 0,
+        count: 3,
+        versionDigest: "'If-None-Match' header not specified",
+        values: [
+          {
+            id: 5029897,
+            version: 0,
+            name: 'Reise',
+            number: '1',
+            description: '',
+            activityType: null,
+            isProjectActivity: true,
+            isGeneral: false,
+            isTask: true,
+            isDisabled: false,
+            isChargeable: false,
+            rate: 0,
+            costPercentage: 0,
+            displayName: '1 Reise',
+          },
+          {
+            id: 5029898,
+            version: 0,
+            name: 'Gjennomforing',
+            number: '2',
+            description: '',
+            activityType: 'TASK',
+            isProjectActivity: false,
+            isGeneral: false,
+            isTask: true,
+            isDisabled: false,
+            isChargeable: false,
+            rate: 0,
+            costPercentage: 0,
+            displayName: '2 Gjennomforing',
+          },
+          {
+            id: 5029901,
+            version: 0,
+            name: 'Gjennomforing',
+            number: '4',
+            description: '',
+            activityType: null,
+            isProjectActivity: true,
+            isGeneral: false,
+            isTask: true,
+            isDisabled: false,
+            isChargeable: false,
+            rate: 0,
+            costPercentage: 0,
+            displayName: '4 Gjennomforing',
+          },
+        ],
+      });
+
+    const activities = await client.list({});
+    parseRuntypeValidationError(activities.error);
+    invariant(activities.success);
+    expect(activities.body.values.map(v => v.activityType)).toEqual([
+      null,
+      'TASK',
+      null,
+    ]);
+  });
 });

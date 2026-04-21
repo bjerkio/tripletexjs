@@ -6,12 +6,14 @@ const activityRt = rt.Record({
   name: rt.String,
   number: rt.String,
   description: rt.String,
-  activityType: rt.Union(
-    rt.Literal('GENERAL_ACTIVITY'),
-    rt.Literal('PROJECT_GENERAL_ACTIVITY'),
-    rt.Literal('PROJECT_SPECIFIC_ACTIVITY'),
-    rt.Literal('TASK'),
-  ),
+  activityType: rt
+    .Union(
+      rt.Literal('GENERAL_ACTIVITY'),
+      rt.Literal('PROJECT_GENERAL_ACTIVITY'),
+      rt.Literal('PROJECT_SPECIFIC_ACTIVITY'),
+      rt.Literal('TASK'),
+    )
+    .nullable(),
   isProjectActivity: rt.Boolean,
   isGeneral: rt.Boolean,
   isTask: rt.Boolean,
