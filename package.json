@@ -1,6 +1,6 @@
 {
   "name": "tripletexjs",
-  "version": "3.18.0",
+  "version": "4.0.0",
   "description": "Typescript-wrapper for Tripletex 2.0 API",
   "main": "dist/index.js",
   "files": [
