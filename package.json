@@ -27,7 +27,7 @@
     "@types/jest": "^28.1.2",
     "@types/omit-empty": "^1.0.1",
     "jest": "^28.1.1",
-    "nock": "^13.2.7",
+    "nock": "^14.0.0",
     "ts-jest": "^28.0.5",
     "typescript": "^5.0.0",
     "@simenandre/prettier": "5.0.0"
