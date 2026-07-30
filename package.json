@@ -22,7 +22,7 @@
   "author": "Simen A. W. Olsen <so@bjerk.io> (https://bjerk.io)",
   "prettier": "@simenandre/prettier",
   "devDependencies": {
-    "@bjerk/eslint-config": "^5.0.0",
+    "@bjerk/eslint-config": "^6.0.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/jest": "^28.1.2",
     "@types/omit-empty": "^1.0.1",
