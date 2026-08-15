@@ -614,10 +614,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tsconfig/node16@^1.0.3":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
-  integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
+"@tsconfig/node18@^18.2.0":
+  version "18.2.7"
+  resolved "https://registry.yarnpkg.com/@tsconfig/node18/-/node18-18.2.7.tgz#798b9e860d418a6bf0c9308beb7970c08c1a3ea7"
+  integrity sha512-UyenTORreCUh8MKh2qbLGGHTRrxjBbSwvX0ZoWs6Jx1jrNS62PXEA3+VaLvmb0YDQrgGU3v3h7zB9Xs/BN1ozg==
 
 "@types/babel__core@^7.1.14":
   version "7.20.1"
