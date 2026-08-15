@@ -23,7 +23,7 @@
   "prettier": "@simenandre/prettier",
   "devDependencies": {
     "@bjerk/eslint-config": "^5.0.0",
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node16": "^16.0.0",
     "@types/jest": "^28.1.2",
     "@types/omit-empty": "^1.0.1",
     "jest": "^28.1.1",
